@@ -1,0 +1,23 @@
+<templateSet group="spring">
+  <template name="smodel" value="import javax.persistence.*;&#10;import java.io.Serializable;&#10;&#10;@Entity @Table(name = &quot;$NAME$s&quot;)&#10;public class $NAME$ implements Serializable {&#10;    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)&#10;    private $TYPE$ id;&#10;&#10;    private $END$;&#10;}" description="JPA entity" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="Long" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="srepository" value="import org.springframework.data.jpa.repository.JpaRepository;&#10;import org.springframework.stereotype.Repository;&#10;&#10;@Repository&#10;public interface $NAME$Repository extends JpaRepository&lt;$NAME$, $TYPE$&gt; {&#10;}&#10;" description="JPA repository" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="Long" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="sservice" value="import org.springframework.beans.factory.annotation.Autowired;&#10;import org.springframework.stereotype.Service;&#10;&#10;import java.util.List;&#10;import java.util.Optional;&#10;&#10;@Service&#10;public class $ENTITY$Service {&#10;    &#10;    @Autowired&#10;    private $ENTITY$Repository repository;&#10;    &#10;    public $ENTITY$ create($ENTITY$ model) {&#10;        return repository.save(model);&#10;    }&#10;    public List&lt;$ENTITY$&gt; findAll() {&#10;        return repository.findAll();&#10;    }&#10;    &#10;    public Optional&lt;$ENTITY$&gt; findById($TYPE$ id) {&#10;        return repository.findById(id);&#10;    }&#10;    &#10;    public void update($ENTITY$ model) {&#10;        repository.save(model);&#10;    }&#10;    &#10;    public void delete($TYPE$ id) {&#10;        repository.deleteById(id);&#10;    }&#10;}" description="Service class" toReformat="false" toShortenFQNames="true">
+    <variable name="ENTITY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="Long" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>

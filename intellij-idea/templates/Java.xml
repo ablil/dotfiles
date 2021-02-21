@@ -1,0 +1,10 @@
+<templateSet group="Java">
+  <template name="jdbc" value="import java.sql.Connection;&#10;import java.sql.DriverManager;&#10;import java.sql.SQLException;&#10;&#10;public class $JDBCUtil$ {&#10;    private final static String USERNAME= &quot;$root$&quot;;&#10;    private final static String PASSWORD = &quot;$root$&quot;;&#10;    private final static String URL = &quot;$url$&quot;;&#10;&#10;    private static Connection connection;&#10;&#10;    private $JDBCUtil$() {&#10;&#10;    }&#10;&#10;    public static Connection getInstance() {&#10;        if ( connection == null )&#10;            initConnection();&#10;        return connection;&#10;    }&#10;&#10;    private static void initConnection() {&#10;        try {&#10;            Class.forName(&quot;com.mysql.cj.jdbc.Driver&quot;);&#10;            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);&#10;        } catch (ClassNotFoundException | SQLException e) {&#10;            e.printStackTrace();&#10;            System.exit(1);&#10;        }&#10;    }&#10;&#10;    public static void closeConnection() {&#10;        if ( connection != null ) {&#10;            try {&#10;                connection.close();&#10;            } catch (SQLException throwables) {&#10;                throwables.printStackTrace();&#10;            }&#10;        }&#10;    }&#10;}&#10;" description="JDBC Singleton" toReformat="false" toShortenFQNames="true">
+    <variable name="JDBCUtil" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="root" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
