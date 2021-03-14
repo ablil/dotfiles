@@ -3,8 +3,13 @@
 	name = ablil
 [alias]
     recommit = commit --amend --no-edit
-    logall = log --oneline --all --graph
-    short = status -s
+    l = log --oneline 
+    s = status -s
+    a = add
+    c = commit
+    cm = commit -m
+    i = init
+    d = diff
 [credential]
 	helper = store
 [core]
