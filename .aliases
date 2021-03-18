@@ -3,6 +3,9 @@ alias du0="du -d 0 -h"
 alias la="ls -a"
 alias ll="ls -l"
 alias vi="vim"
+alias s=sudo
+alias p=python3
+alias v=vi
 
 # ip
 alias ip="ip -c"

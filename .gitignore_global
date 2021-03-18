@@ -20,3 +20,7 @@ target/
 # Custom
 .todo
 .env
+.commit
+
+# firebase
+.firebase
