@@ -1,0 +1,67 @@
+<templateSet group="hybriste-item.xml">
+  <template name="itemtype:extends" value="&lt;itemtype code=&quot;$MODEL_NAME$&quot; extends=&quot;$PARENT$&quot;&gt;&#10;    &lt;description&gt;type description here&lt;/description&gt;&#10;    &lt;attributes&gt;&#10;        &lt;attribute qualifier=&quot;$QUALIFIER$&quot; type=&quot;$TYPE$&quot;&gt;&#10;            &lt;modifiers read=&quot;$READ$&quot; write=&quot;$WRITE$&quot;/&gt;&#10;            &lt;persistence type=&quot;$PROPERTY$&quot;/&gt;&#10;        &lt;/attribute&gt;&#10;    &lt;/attributes&gt;&#10;&lt;/itemtype&gt;" description="Define itemtype that extends existing type" toReformat="true" toShortenFQNames="true">
+    <variable name="MODEL_NAME" expression="" defaultValue="MyProduct" alwaysStopAt="true" />
+    <variable name="PARENT" expression="" defaultValue="Product" alwaysStopAt="true" />
+    <variable name="QUALIFIER" expression="" defaultValue="myProduct" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="java.lang.String" alwaysStopAt="true" />
+    <variable name="READ" expression="" defaultValue="true" alwaysStopAt="true" />
+    <variable name="WRITE" expression="" defaultValue="false" alwaysStopAt="true" />
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="itemtype:empty" value="&lt;itemtype code=&quot;$MODEL_NAME$&quot;&gt;&#10;    &lt;deployment table=&quot;$MODEL_TABLE$&quot; typecode=&quot;$TYPE_CODE$&quot;/&gt;&#10;    &lt;attributes&gt;&#10;        &lt;attribute qualifier=&quot;$QUALIFIER$&quot; type=&quot;$TYPE$&quot;&gt;&#10;            &lt;modifiers read=&quot;$READ$&quot; write=&quot;$WRITE$&quot;/&gt;&#10;            &lt;persistence type=&quot;$PERSISTENCE$&quot;/&gt;&#10;        &lt;/attribute&gt;&#10;    &lt;/attributes&gt;&#10;&lt;/itemtype&gt;" description="Defien itemtype that extends from GenericItem" toReformat="false" toShortenFQNames="true">
+    <variable name="MODEL_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODEL_TABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE_CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="QUALIFIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="READ" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="WRITE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PERSISTENCE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="relation" value="&lt;relation code=&quot;$CODE$&quot; localized=&quot;false&quot;&gt;&#10;  &lt;sourceElement qualifier=&quot;$firstqualifer$&quot; type=&quot;$firstype$&quot; collectiontype=&quot;set&quot; cardinality=&quot;many&quot; ordered=&quot;false&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;  &lt;/sourceElement&gt;&#10;  &lt;targetElement qualifier=&quot;$secondtype$&quot; type=&quot;$secondtype$&quot; cardinality=&quot;one&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;  &lt;/targetElement&gt;&#10;&lt;/relation&gt;" description="Relation between two itemtypes" toReformat="false" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="firstqualifer" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="firstype" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="secondtype" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="relation:onetomany" value="&lt;relation code=&quot;$CODE$&quot; localized=&quot;false&quot;&gt;&#10;  &lt;sourceElement type=&quot;$SOURCETYPE$&quot; cardinality=&quot;one&quot; qualifier=&quot;$SRCQUALIFIER$&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;false&quot;/&gt;&#10;  &lt;/sourceElement&gt;&#10;  &lt;targetElement type=&quot;$DSTTYPE$&quot; cardinality=&quot;many&quot; qualifier=&quot;$DSTQUALIFIER$&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot; partof=&quot;true&quot;/&gt;&#10;  &lt;/targetElement&gt;&#10;&lt;/relation&gt;&#10;" description="One to many relation" toReformat="true" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SOURCETYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SRCQUALIFIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DSTTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DSTQUALIFIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="relation:manytoone" value="&lt;relation code=&quot;$CODE$&quot; localized=&quot;false&quot;&gt;&#10;  &lt;sourceElement type=&quot;$SRCTYPE$&quot; cardinality=&quot;many&quot; qualifier=&quot;$SRCQUALIFIER$&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;false&quot;/&gt;&#10;  &lt;/sourceElement&gt;&#10;  &lt;targetElement type=&quot;$DSTTYPE$&quot; cardinality=&quot;one&quot; qualifier=&quot;$DSTQUALIFIER$&quot;&gt;&#10;    &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;  &lt;/targetElement&gt;&#10;&lt;/relation&gt;&#10;" description="Many 2 one relation" toReformat="true" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SRCTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SRCQUALIFIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DSTTYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DSTQUALIFIER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="relation:manytomany" value="    &lt;relation code=&quot;$code$&quot; localized=&quot;false&quot;&gt;&#10;      &lt;deployment table=&quot;$table$&quot; typecode=&quot;14300&quot;/&gt;&#10;      &lt;sourceElement qualifier=&quot;$srcqualifier$&quot; type=&quot;$srctype$&quot; cardinality=&quot;many&quot; ordered=&quot;false&quot;&gt;&#10;        &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;      &lt;/sourceElement&gt;&#10;      &lt;targetElement qualifier=&quot;$dstqualifier$&quot; type=&quot;$desttype$&quot; cardinality=&quot;many&quot; ordered=&quot;false&quot;&gt;&#10;        &lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;      &lt;/targetElement&gt;&#10;    &lt;/relation&gt;&#10;" description="many to many relation" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="srcqualifier" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="srctype" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="dstqualifier" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="desttype" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>

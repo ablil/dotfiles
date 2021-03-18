@@ -7,4 +7,25 @@
       <option name="JAVA_CODE" value="true" />
     </context>
   </template>
+  <template name="pst" value="private String $VARIABLE$;" description="private String" toReformat="true" toShortenFQNames="true">
+    <variable name="VARIABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="pint" value="private Integer $INTEGER$;" description="private int" toReformat="false" toShortenFQNames="true">
+    <variable name="INTEGER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="method" value="public void $METHOD_NAME$($VARIABLES$) {&#10;    $WRITE_HERE$&#10;}" description="Create new void method" toReformat="false" toShortenFQNames="true">
+    <variable name="METHOD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARIABLES" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="WRITE_HERE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="COMPLETION" value="true" />
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
