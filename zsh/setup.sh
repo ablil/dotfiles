@@ -14,5 +14,5 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
 fi
 
 # configure zsh
-ln -sf "$dotfiles/zsh/.zsh*" $HOME
-ln -sf "$dotfiles/zsh/.aliases" $HOME
+ln -sf $dotfiles/zsh/.zsh* $HOME
+ln -sf $dotfiles/zsh/.aliases $HOME
