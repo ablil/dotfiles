@@ -19,4 +19,4 @@
 	helper = store
 [core]
 	editor = vi
-	excludesfile = /dotfiles/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
