@@ -33,9 +33,6 @@ function default_setup() {
 
   # tmux
   ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
-  
-  # vim
-  ln -sf ~/.dotfiles/.vimrc ~/.vimrc
 }
 
 check_dotfiles
