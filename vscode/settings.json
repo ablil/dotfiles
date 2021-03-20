@@ -1,6 +1,5 @@
 {
     "todo-tree.tree.showScanModeButton": false,
-    "workbench.sideBar.location": "right",
     "window.dialogStyle": "custom",
     "window.titleBarStyle": "custom",
     "workbench.iconTheme": "material-icon-theme",
@@ -8,7 +7,6 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideTabs": false,
     "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": true,
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -27,5 +25,16 @@
     "editor.tabSize": 2,
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "editor.scrollBeyondLastColumn": 0,
+    "editor.scrollBeyondLastLine": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Gruvbox Material Dark"
 }
