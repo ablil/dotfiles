@@ -13,7 +13,7 @@ fi
 if [[ -f "$HOME/.vimrc" ]]; then
   rm "$HOME/.vimrc" -f
 fi
-ln -s "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
+ln -fs "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
 
 # Install plugins
 if [[ -d "$HOME/.vim/bundle" ]]; then
