@@ -2,10 +2,16 @@
 alias du0="du -d 0 -h"
 alias la="ls -a"
 alias ll="ls -l"
-alias vi="vim"
+alias vi=vim
+alias please=sudo
+
+# one character alias
+alias g=git
 alias s=sudo
-alias p=python3
 alias v=vi
+alias l=ls
+alias p=python3
+alias b=bash
 
 # ip
 alias ip="ip -c"

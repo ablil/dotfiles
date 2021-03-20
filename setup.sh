@@ -23,11 +23,6 @@ function check_dotfiles() {
 }
 
 function default_setup() {
-  # zsh
-  ln -sf "$DOTFILES_DIRECTORY/.zsh_functions" ~/.zsh_functions
-  ln -sf ~/.dotfiles/.aliases ~/.aliases
-  ln -sf ~/.dotfiles/.zshrc ~/.zshrc
-
   # git
   ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 
