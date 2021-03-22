@@ -8,3 +8,8 @@ function mk() {
 function mkgit() {
     mkdir $1 && cd $1 && git init && touch .gitignore
 }
+
+function git_repository() {
+  gitrepo=$(git branch --show-current 2>/dev/null)
+  echo $gitrepo
+}
