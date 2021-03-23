@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export ZSH="/home/$USER/.oh-my-zsh"
