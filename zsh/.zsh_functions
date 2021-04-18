@@ -5,11 +5,23 @@ function mk() {
     mkdir $1 && cd $1
 }
 
+function mkfile() {
+  # touch command with nested directories
+  f_dirname=$(dirname $1)
+
+  if [[ ! -d $f_direname ]]; then
+    mkdir -p -v $f_dirname
+  fi
+
+  touch $1
+}
+
 function mkgit() {
+  # Create git repostiroy and move to it
     mkdir $1 && cd $1 && git init && touch .gitignore
 }
 
-function git_repository() {
-  gitrepo=$(git branch --show-current 2>/dev/null)
-  echo $gitrepo
+function yt2mp3() {
+  # Download youtube video to mp3 format
+  youtube-dl -x --audio-format mp3 $1
 }
