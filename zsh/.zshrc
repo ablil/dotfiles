@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 export ZSH="/home/$USER/.oh-my-zsh"
 export UPDATE_ZSH_DAYS=15
 
-ZSH_THEME="josh"
+ZSH_THEME=half-life
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(git gitignore)
