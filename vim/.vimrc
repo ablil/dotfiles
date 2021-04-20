@@ -17,7 +17,7 @@ set smartindent
 set colorcolumn=80
 
 " set number of line to keep above and below the cursor
-set scrolloff=5
+set scrolloff=1
 
 " highlight line under cursor
 set cursorline
