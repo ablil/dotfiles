@@ -18,7 +18,7 @@ function mkfile() {
 
 function mkgit() {
   # Create git repostiroy and move to it
-    mkdir $1 && cd $1 && git init && touch .gitignore
+    mkdir $1 && cd $1 && git init && touch .gitignore && git config --local credential.helper store
 }
 
 function yt2mp3() {

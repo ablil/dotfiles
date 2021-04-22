@@ -5,6 +5,7 @@ alias ll="ls -l"
 alias rmr="rm -rf"
 alias vi=vim
 alias please=sudo
+alias xpath='xmllint --xpath'
 
 # one character alias
 alias g=git
