@@ -21,6 +21,7 @@ target/
 .todo
 .env
 .commit
+.idea
 
 # firebase
 .firebase
