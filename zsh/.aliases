@@ -6,6 +6,7 @@ alias rmr="rm -rf"
 alias vi=vim
 alias please=sudo
 alias xpath='xmllint --xpath'
+alias grep='grep -P'
 
 # one character alias
 alias g=git
@@ -19,8 +20,10 @@ alias b=bash
 alias ip="ip -c"
 alias ipb="ip -c -br"
 
-# python 
-alias pretty="python3 -mjson.tool"
+# prettier
+alias jsonpretty="python3 -mjson.tool"
+alias xmlpretty="xmllint --format -"
+
 
 # Quick shortcut
 alias sysupdate="sudo dnf -y update && sudo dnf -y autoremove && sudo dnf -y remove --oldinstallonly"
