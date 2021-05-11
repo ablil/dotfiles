@@ -1,0 +1,12 @@
+<templateSet group="mvn dependencies">
+  <template name="lombok" value="&lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&gt;&#10;&lt;dependency&gt;&#10;    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;&#10;    &lt;artifactId&gt;lombok&lt;/artifactId&gt;&#10;    &lt;version&gt;1.18.20&lt;/version&gt;&#10;    &lt;scope&gt;provided&lt;/scope&gt;&#10;&lt;/dependency&gt;&#10;" description="lombok dependency" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="jupiter" value="&lt;!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine --&gt;&#10;&lt;dependency&gt;&#10;    &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;&#10;    &lt;artifactId&gt;junit-jupiter-engine&lt;/artifactId&gt;&#10;    &lt;version&gt;5.8.0-M1&lt;/version&gt;&#10;    &lt;scope&gt;test&lt;/scope&gt;&#10;&lt;/dependency&gt;&#10;&lt;!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api --&gt;&#10;&lt;dependency&gt;&#10;    &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;&#10;    &lt;artifactId&gt;junit-jupiter-api&lt;/artifactId&gt;&#10;    &lt;version&gt;5.8.0-M1&lt;/version&gt;&#10;    &lt;scope&gt;test&lt;/scope&gt;&#10;&lt;/dependency&gt;&#10;" description="JUnit testing with jupiter-api &amp; jupter-engine" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+</templateSet>
