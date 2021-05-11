@@ -2,7 +2,6 @@
     "todo-tree.tree.showScanModeButton": false,
     "window.dialogStyle": "custom",
     "window.titleBarStyle": "custom",
-    "workbench.iconTheme": "material-icon-theme",
     "zenMode.hideActivityBar": false,
     "zenMode.hideLineNumbers": false,
     "zenMode.hideTabs": false,
@@ -35,6 +34,32 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Gruvbox Material Dark"
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": false,
+    "vim.highlightedyank.enable": true,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000"
+    },
+    "editor.minimap.enabled": false
 }
