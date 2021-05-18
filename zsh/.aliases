@@ -24,7 +24,7 @@ alias ipb="ip -c -br"
 alias jsonpretty="python3 -mjson.tool"
 alias xmlpretty="xmllint --format -"
 
-
 # Quick shortcut
 alias sysupdate="sudo dnf -y update && sudo dnf -y autoremove && sudo dnf -y remove --oldinstallonly"
 alias con="ping -c 2 google.com"
+alias rmnodemodules='find . -maxdepth 3 -type d -name node_modules -exec rm -rf {} \;'
