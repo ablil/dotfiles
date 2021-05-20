@@ -1,12 +1,17 @@
 # shell aliases
 alias du0="du -d 0 -h"
-alias la="ls -a"
-alias ll="ls -l"
 alias rmr="rm -rf"
 alias vi=vim
 alias please=sudo
 alias xpath='xmllint --xpath'
 alias grep='grep -P'
+
+# ls command
+alias l="ls"
+alias la="ls -a"
+alias ll="ls -l"
+alias ld="ls -d"
+
 
 # one character alias
 alias g=git
