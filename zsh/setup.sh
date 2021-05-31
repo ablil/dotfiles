@@ -19,6 +19,6 @@ ln -sf $dotfiles/zsh/.aliases $HOME
 ln -sf $dotfiles/zsh/.zshrc $HOME
 
 # symbolic link of home directories
-ln -sf $HOME/Downloads /downs
-ln -sf $HOME/Documents /docs
-ln -sf $HOME/Desktop /Desktop
+sudo ln -sf $HOME/Downloads /downs
+sudo ln -sf $HOME/Documents /docs
+sudo ln -sf $HOME/Desktop /Desktop
