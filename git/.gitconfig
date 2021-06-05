@@ -21,3 +21,5 @@
 [core]
 	editor = vi
 	excludesfile = $HOME/.gitignore_global
+[commit]
+	template = $HOME/.gitcommit

@@ -1,0 +1,7 @@
+# <type>(<scope>): <subject>
+# type: feat, fix, refactor, build, docs, ci, test
+# scope: optional, it represent a section of the codebase
+# subject: short description of commit
+
+# long description here
+

@@ -9,3 +9,6 @@ if [[ ! -d $dotfiles ]]; then
 fi
 
 ln -sf $dotfiles/git/.git* $HOME
+
+# global config
+git config --global commit.template $HOME/.gitcommit
