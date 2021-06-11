@@ -17,6 +17,7 @@ fi
 ln -sf $dotfiles/zsh/.zsh_functions $HOME
 ln -sf $dotfiles/zsh/.aliases $HOME
 ln -sf $dotfiles/zsh/.zshrc $HOME
+ln -sf $dotfiles/zsh/ablil.zsh-theme $HOME/.oh-my-zsh/themes/
 
 # symbolic link of home directories
 sudo ln -sf $HOME/Downloads /downs
