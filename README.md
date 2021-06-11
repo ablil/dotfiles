@@ -1,41 +1,35 @@
-# Dotfile
+# dotfiles
 
-This repository serves as my quick way to setup my dotfiles on a new machine.
+This is a collection of my dotfiles, for quick setup on a new machine.
 
-**some benefits**
+## Advantages for using dotfiles
 
 * all dotfiles are grouped in one place.
 * all dotfiles are tracked by git, if your screw up, you could `git restore`
 * all dotfiles are independant of the host machine.
 * one quick command and you could setup all your dotfiles
 
-### Description
+## Description
 
-**Setup scripts**
+Each directory contains dotfiles for a specific use case.
+For example `zsh` contains dotfiles related to zsh and a `setup.sh` script to setup the environment.
 
-Every script called `setup.sh` is responsible for setting up the dotfiles
-inside the same directory.
+If you run `setup.sh`, it will configure what is required to be configured, then it will link the
+dotfiles symbolically to their appropriate location.
 
-It will link symbolically all dotfiles to your home directory or the appropriate
-directory (eg: config directory of *vscode* is `~/.config/Code` ).
+For instance, $HOME/.dotfiles/zsh/.zshrc will be linked to $HOME/.zshrc
 
-For example the script `vscode/setup.sh` will setup all the dotfiles that are
-included in `vscode/`.
-
-**Install scripts**
-
-Every script with the following pattern `install-*.sh` is repsonsible for
-installing a specific program or group of programs.
-
-For example `vscode/install-extensions.sh` will install some vscode extensions.
-
-These scripts has nothing to do with setup files, they should be called manually.
-
-### Usage
+## Usage
 
 1. Clone the repo to `~/.dotfiles`
-2. Call `~/.dotfiles/setup.sh` to setup the basic dotfiles (zsh, git, tmux)
+command: ```git clone https://github.com/ablil/dotfiles ~/.dotfiles```
+
+2. Call **setup.sh** script to setup your environement
+command: ```bash $HOME/.dotfiles/zsh/setup.sh```
+
 3. Re-open your terminal to see the changes
 
 ### References
+[youtube video](https://www.youtube.com/watch?v=r_MpUP6aKiQ)
+[inspiration](https://dotfiles.github.io/)
 
