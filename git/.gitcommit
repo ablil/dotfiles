@@ -1,7 +1,7 @@
-# <type>(<scope>): <subject>
-# type: feat, fix, refactor, build, docs, ci, test
-# scope: optional, it represent a section of the codebase
-# subject: short description of commit
-
-# long description here
-
+# feat: a new feature for the user
+# fix: a bug fix
+# refactor: a commit that is neither a fix or a bug
+# docs: documentation only changes
+# chore:  updading grunt task etc; no production code change
+# ci: changet to CI configuration files and scripts (ex: docker, github action)
+# test:  adding missing tests or correcting existings tests
