@@ -1,0 +1,58 @@
+<templateSet group="hybris">
+  <template name="itemtype:new" value="&#9;&#9;&lt;itemtype generate=&quot;$generate$&quot; autocreate=&quot;$autocreate$&quot; code=&quot;$code$&quot;&gt;&#10;&#9;&#9;&#9;&lt;deployment table=&quot;$table$&quot; typecode=&quot;$typecode$&quot;/&gt;&#10;&#9;&#9;&#9;&lt;attributes&gt;&#10;&#9;&#9;&#9;&#9;&lt;attribute qualifier=&quot;$qualifier$&quot; type=&quot;java.lang.$type$&quot;&gt;&#10;&#9;&#9;&#9;&#9;&#9;&lt;persistence type=&quot;$persistence$&quot;/&gt;&#10;&#9;&#9;&#9;&#9;&lt;/attribute&gt;&#10;&#9;&#9;&#9;&lt;/attributes&gt;&#10;&#9;&#9;&lt;/itemtype&gt;" description="create new itemtype" toReformat="true" toShortenFQNames="true">
+    <variable name="generate" expression="" defaultValue="true" alwaysStopAt="true" />
+    <variable name="autocreate" expression="" defaultValue="true" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="ItemTypeCode" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="ItemTypeTable" alwaysStopAt="true" />
+    <variable name="typecode" expression="" defaultValue="UniqueCode" alwaysStopAt="true" />
+    <variable name="qualifier" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="String" alwaysStopAt="true" />
+    <variable name="persistence" expression="" defaultValue="property" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="enumtype" value="&#9;&#9;&lt;enumtype code=&quot;$code$&quot; autocreate=&quot;true&quot; generate=&quot;true&quot; dynamic=&quot;false&quot;&gt;&#10;&#9;&#9;&#9;&lt;value code=&quot;$value$&quot;/&gt;&#10;&#9;&#9;&lt;/enumtype&gt;" description="create new enumtype" toReformat="true" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="itemtype:extends" value="&lt;itemtype generate=&quot;true&quot; code=&quot;$code$&quot; extends=&quot;$extends$&quot; autocreate=&quot;true&quot;&gt;&#10;        &lt;attributes&gt;&#10;            &lt;attribute qualifier=&quot;$qualifier$&quot; type=&quot;java.lang.$type$&quot;&gt;&#10;                &lt;persistence type=&quot;property&quot; /&gt;&#10;            &lt;/attribute&gt;&#10;         &lt;/attributes&gt;&#10;         &lt;/itemtype&gt;" description="extend existing itemtype" toReformat="true" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extends" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="qualifier" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="relation:many2one" value="&#9;&#9;&lt;relation code=&quot;$relation$&quot; autocreate=&quot;true&quot; localized=&quot;false&quot;&gt;&#10;&#9;&#9;&#9;&lt;sourceElement qualifier=&quot;$source$&quot; type=&quot;$sourcetype$&quot; collectiontype=&quot;set&quot; cardinality=&quot;many&quot; ordered=&quot;false&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;&#9;&#9;&#9;&lt;/sourceElement&gt;&#10;&#9;&#9;&#9;&lt;targetElement qualifier=&quot;$target$&quot; type=&quot;$targettype$&quot; cardinality=&quot;one&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;&#9;&#9;&#9;&lt;/targetElement&gt;&#10;&#9;&#9;&lt;/relation&gt;" description="create many to one relation" toReformat="true" toShortenFQNames="true">
+    <variable name="relation" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="source" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="sourcetype" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="target" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="targettype" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="relation:many2many" value="&#9;&#9;&lt;relation code=&quot;$relation$&quot; autocreate=&quot;true&quot; localized=&quot;false&quot;&gt;&#10;&#9;&#9;&#9;&lt;deployment table=&quot;$table$&quot; typecode=&quot;$code$&quot;/&gt;&#10;&#9;&#9;&#9;&lt;sourceElement qualifier=&quot;$source$&quot; type=&quot;$sourceType$&quot; collectiontype=&quot;set&quot; cardinality=&quot;many&quot; ordered=&quot;false&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;&#9;&#9;&#9;&lt;/sourceElement&gt;&#10;&#9;&#9;&#9;&lt;targetElement qualifier=&quot;$target$&quot; type=&quot;$targetType$&quot; cardinality=&quot;many&quot;&gt;&#10;&#9;&#9;&#9;&#9;&lt;modifiers read=&quot;true&quot; write=&quot;true&quot; search=&quot;true&quot; optional=&quot;true&quot;/&gt;&#10;&#9;&#9;&#9;&lt;/targetElement&gt;&#10;&#9;&#9;&lt;/relation&gt;" description="create many to many relation" toReformat="true" toShortenFQNames="true">
+    <variable name="relation" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="source" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="sourceType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="target" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="targetType" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="impex" value="    protected boolean impexImport(final String filename) {&#10;        String message = &quot;Impexing[&quot; + filename + &quot;]...&quot;;&#10;        try (InputStream resourceAsStream = getClass().getResourceAsStream(filename)) {&#10;            log.info(message);&#10;&#10;            ImportConfig importConfig = new ImportConfig();&#10;            importConfig.setScript(new StreamBasedImpExResource(resourceAsStream, &quot;UTF-8&quot;));&#10;            importConfig.setLegacyMode(Boolean.FALSE);&#10;&#10;            final ImportResult importResult = importService.importData(importConfig);&#10;            if (importResult.isError()) {&#10;                log.error(message + &quot; FAILED&quot;);&#10;                return false;&#10;            }&#10;        } catch (Exception e) {&#10;            log.error(message + &quot; FAILED&quot;, e);&#10;            return false;&#10;        }&#10;        return true;&#10;    }" description="import / export data with impex service" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
