@@ -1,0 +1,17 @@
+#!/bin/sh
+
+function mk() {
+  mkdir $1 && cd $1
+}
+
+function mkfile() {
+  f_direname=$(direname $1)
+  if [[ ! -d $f_direname ]]; then
+    mkdir -p $f_direname
+  fi
+  touch $1
+}
+
+function mkgit() {
+  mkdir $1 && cd $1 && git init && touch .gitignore && git config --local credential.helper store
+}

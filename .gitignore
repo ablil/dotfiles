@@ -1,0 +1,21 @@
+*~
+.*.swp
+.DS_Store
+
+# python
+__pycache__/
+weels/
+venv/
+env/
+
+# Node
+node_modules/
+
+# Java
+target/
+*.class
+*.jar
+*.war
+
+# Custom
+.env

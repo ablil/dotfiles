@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# includes user bin to PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+
+# make vim default editor
+export EDITOR='vim'

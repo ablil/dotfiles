@@ -1,0 +1,22 @@
+[alias]
+    l = log --pretty=oneline --graph --abbrev-commit -n 10
+    la = log --all --oneline --graph --abrev-commit
+    s = status
+    ss = status -s
+    a = add
+    au = add -u
+    c = commit
+    cm = commit -m
+    rc = commit --amend --no-edit
+    d = diff
+    dh = diff HEAD
+    ps = push
+[core]
+	editor = vi
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+[status]
+	branch = true
+[branch]
+  # show most recentely changed branches first
+  sort = -committerdate

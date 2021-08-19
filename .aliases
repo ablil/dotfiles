@@ -1,0 +1,18 @@
+# navigation
+alias ..="cd .."
+alias ...="cd ../../"
+alias -="cd -"
+alias d="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+# ls
+alias l=ls
+alias la="ls -a"
+alias ll="ls -l"
+
+# one character
+alias g=git
+alias v=vim
+alias p=python3
+alias s=sudo
