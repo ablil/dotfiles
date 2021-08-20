@@ -25,7 +25,8 @@ There is more to be included, feel free to contribute :wink:
 * [x] tmux
 * [x] prettier
 * [x] git
-
+* [ ] vscode
+* [ ] Inetllij idea
 
 # :ok_hand: Contribute
 Contributions are always welcome, please read [contribution guideline](https://github.com/ablil/dotfiles/blob/master/CONTRIBUTING.md) first.
