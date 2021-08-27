@@ -5,3 +5,6 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # make vim default editor
 export EDITOR='vim'
+
+# Home
+export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin\/java//')"
