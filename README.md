@@ -1,5 +1,7 @@
 
 # dotfiles -- The developer's quick setup
+[![shellcheck](https://github.com/ablil/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ablil/dotfiles/actions/workflows/shellcheck.yml)
+
 A biased collection of dotfiles with default universal configuration.
 
 *dotfiles are used to customize system configuration, they are derived from Unix-like configuration files that starts with a dot. Google this stuff for more info*
