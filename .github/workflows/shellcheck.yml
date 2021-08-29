@@ -1,0 +1,15 @@
+name: shellcheck
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: azohra/shell-linter@latest
+        with:
+          path: '**/*.sh'
