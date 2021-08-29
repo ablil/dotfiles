@@ -27,7 +27,7 @@ There is more to be included, feel free to contribute :wink:
 * [x] tmux
 * [x] prettier
 * [x] git
-* [ ] vscode
+* [x] vscode
 * [ ] Inetllij idea
 
 # :ok_hand: Contribute
