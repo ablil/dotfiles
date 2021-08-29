@@ -6,7 +6,7 @@ export UPDATE_ZSH_DAYS=15
 ZSH_THEME=cloud
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(git gitignore)
+plugins=(git gitignore docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 [[ -f ~/.exports ]] && source ~/.exports

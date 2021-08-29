@@ -20,3 +20,6 @@
 [branch]
   # show most recentely changed branches first
   sort = -committerdate
+[user]
+	email = ablil@protonmail.com
+	name = ablil
