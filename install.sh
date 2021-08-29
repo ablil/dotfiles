@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 cwd=$(pwd)
 
@@ -15,5 +15,5 @@ dotfiles=(
 
 
 for dotfile in "${dotfiles[@]}"; do
-	ln -s -f $cwd/$dotfile $HOME/$dotfile
+	ln -s -f "$cwd/$dotfile" "$HOME/$dotfile"
 done
