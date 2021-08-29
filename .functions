@@ -5,9 +5,9 @@ function mk() {
 }
 
 function mkfile() {
-  f_direname=$(direname $1)
-  if [[ ! -d $f_direname ]]; then
-    mkdir -p $f_direname
+  f_dirname=$(dirname $1)
+  if [[ ! -d $f_dirname ]]; then
+    mkdir -p $f_dirname
   fi
   touch $1
 }
