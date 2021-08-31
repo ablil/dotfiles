@@ -10,5 +10,6 @@ plugins=(git gitignore docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 [[ -f ~/.exports ]] && source ~/.exports
+[[ -f ~/.exports_private ]] && source ~/.exports_private
 [[ -f ~/.aliases ]] && source ~/.aliases
 [[ -f ~/.functions ]] && source ~/.functions
