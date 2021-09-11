@@ -27,8 +27,10 @@ patch=$(echo $version | cut -f 3 -d .)
 # increment version
 if [[ $1 == '--major' ]]; then
     major=`expr $major + 1`
+    minor=0
 elif [[ $1 == '--minor' ]]; then
     minor=`expr $minor + 1`
+    patch=0
 elif [[ $1 == '--patch' ]]; then 
     patch=`expr $patch + 1`
 else
@@ -38,7 +40,8 @@ fi
 # update with new version
 newversion="${major}.${minor}.${patch}"
 sed -r -i -e "s/version=('|\").+('|\"),?/version='$newversion',/g" setup.py
+echo "VERSION = '$newversion'" > src/version.py
 echo "new version is $newversion"
 
 # git add and commit
-git add setup.py && git commit -o setup.py -m "v$newversion"
+git add setup.py src/version.py && git commit -o setup.py src/version.py -m "v$newversion"
