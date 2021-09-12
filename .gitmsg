@@ -1,0 +1,6 @@
+# feat: introduce new feature to code base (increase minor version)
+# fix: fix a bug in codebase (increase patch version)
+# refactor: a code change that neither fixes a bug nor adds a features
+# ci: change to CI configuration (eg, github action, travis, circle ...)
+# docs: documentations change only
+# test: adding missing tests or correcting existing tests

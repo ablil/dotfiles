@@ -34,3 +34,6 @@ if [[ -d "$HOME/.config/Code/User" ]]; then
   rm -rf "$HOME/.config/Code/User" 
 fi
 ln -s -f "$cwd/Code/User" "$HOME/.config/Code/"
+
+# git
+git config --global commit.template "$PWD/.gitmsg"
