@@ -17,3 +17,5 @@ alias v=vim
 alias p=python3
 alias s=sudo
 alias b=bash
+
+alias dc=docker-compose
