@@ -8,3 +8,9 @@ export EDITOR='vim'
 
 # Home
 export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin\/java//')"
+
+# mvn home
+export M2_HOME="/usr/share/maven"
+
+# ant home
+export ANT_HOME="/usr/share/ant"
