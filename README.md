@@ -15,20 +15,9 @@ For three main reasons:
 
 # :hammer: Usage
 It is very simple, clone the repository and link symbolically any dotfile you want.
-
-If you want to speed the process, run the script `install.sh` which defines an array of dotfiles to be linked symbolically for you.
+You may find some script that automate soem tasks also.
 
 *PS: you don't want to link all dotfiles, because it does not make sense to link for example .prettierrc globally*
-
-# :fire: What's inside ?
-There is more to be included, feel free to contribute :wink:
-* [x] zsh
-* [x] vim
-* [x] tmux
-* [x] prettier
-* [x] git
-* [x] vscode
-* [ ] Inetllij idea
 
 # :ok_hand: Contribute
 Contributions are always welcome, please read [contribution guideline](https://github.com/ablil/dotfiles/blob/master/CONTRIBUTING.md) first.
