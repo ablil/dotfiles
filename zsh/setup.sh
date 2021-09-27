@@ -6,7 +6,7 @@ cd $cwd
 if [[ "$(grep -Ei 'fedora|redhat' /etc/*release)" ]]; then
   sudo dnf install -y curl util-linux-user zsh
 elif [[ "$(grep -Ei 'debian|bunut|mint' /etc/*release)" ]]; then
-  sudo apt-get install - y curl zsh
+  sudo apt-get install -y curl zsh
 else
   echo "It seems you are not running REHL or Debian based distro !!!"
   exit 1;
