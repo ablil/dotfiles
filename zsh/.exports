@@ -1,16 +1,10 @@
-#!/usr/bin/env bash
-
 # includes user bin to PATH
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # make vim default editor
 export EDITOR='vim'
 
-# Home
+# HOME variables
 export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin\/java//')"
-
-# mvn home
 export M2_HOME="/usr/share/maven"
-
-# ant home
 export ANT_HOME="/usr/share/ant"

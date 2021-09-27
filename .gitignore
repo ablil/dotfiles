@@ -19,3 +19,4 @@ target/
 
 # Custom
 .env
+.exports_private
