@@ -1,0 +1,14 @@
+<templateSet group="custom-spring">
+  <template name="wire" value="@org.springframework.beans.factory.annotation.Autowired&#10;private " description="Autowire dependency" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="get" value="@GetMapping(&quot;/$PATH&quot;)&#10;ResponseEntity&lt;$TYPE$&gt; $METHOD$() {&#10;&#10;}" description="Get method" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

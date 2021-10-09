@@ -1,0 +1,12 @@
+<templateSet group="custom-java">
+  <template name="pf" value="private final" description="prviate final" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pv" value="private void" description="private void" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>
