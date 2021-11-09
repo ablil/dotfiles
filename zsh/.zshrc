@@ -6,7 +6,7 @@ export UPDATE_ZSH_DAYS=15
 ZSH_THEME=ys
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=()
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
