@@ -9,4 +9,14 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="ps" value="private String " description="private String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="pl" value="private long " description="private long" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>

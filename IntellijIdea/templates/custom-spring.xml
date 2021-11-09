@@ -11,4 +11,11 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="val" value="@org.springframework.beans.factory.annotation.Value(&quot;${$PROPERTY$}&quot;)&#10;private String $VARIABLENAME$" description="Value from properties file" toReformat="false" toShortenFQNames="true" useStaticImport="true">
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARIABLENAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_DECLARATION" value="true" />
+    </context>
+  </template>
 </templateSet>
