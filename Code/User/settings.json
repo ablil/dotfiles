@@ -44,7 +44,9 @@
         "TODO",
         "XXX",
         "[ ]",
-        "[x]"
+        "[x]",
+        "todo",
+        "fixme"
     ],
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
     "workbench.iconTheme": "material-icon-theme",
