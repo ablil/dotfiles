@@ -73,5 +73,13 @@
             "    python_requires='>3.7',",
             ")",
         ]
+    },
+    "class init method": {
+        "prefix": "init",
+        "description": "class init method",
+        "body": [
+            "def __init__(self, ${1}):",
+            "    pass"
+        ]
     }
 }
