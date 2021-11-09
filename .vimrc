@@ -14,3 +14,6 @@ set cursorline              " highlight line under cursor
 " Vundle configuration
 set nocompatible            " be iMproved, required
 filetype off                " required
+
+au BufRead,BufNewFile *.impex set filetype=impex
+colorscheme default
