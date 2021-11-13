@@ -31,6 +31,7 @@ basic packages to install on new linux box manually:
 
 * install vscode
   * link config files from `dotfiles`
+  * install extension (to be backedup manually)
 * install intellij idea
   * vim
   * lombok
