@@ -33,3 +33,11 @@ if [[ $? != 0 ]]; then
   gpg --export --armor > $gpg_backup_directory/my-key.pub
   gpg --export-secret-keys --armor > $gpg_backup_directory/my-key
 fi
+
+# vscode extension
+which code
+if [[ $? != 0 ]]; then
+  code_backup_directory="$destination/vscode"
+  [[ !-d $code_backup_directory ]] && mkdir -p $code_backup_directory
+  code --list-extensions > $code_backup_directory/installed-extensions.txt
+fi
