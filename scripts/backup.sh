@@ -25,3 +25,11 @@ if [[ -d $HOME/.ssh ]]; then
   echo "SSH backup is done"
 fi
 
+# gpg
+which gpg
+if [[ $? != 0 ]]; then
+  gpg_backup_directory="$destination/gpg"
+  [[ ! -d $gpg_backup_directory ]] && mkdir -p $gpg_backup_directory
+  gpg --export --armor > $gpg_backup_directory/my-key.pub
+  gpg --export-secret-keys --armor > $gpg_backup_directory/my-key
+fi
