@@ -20,19 +20,19 @@ fi
 # Extract current version
 version=$(sed -n -r -e "s/version=('|\")([[:digit:]]+.[[:digit:]]+.[[:digit:]]+)('|\"),?/\2/p" setup.py)
 echo "current version is $version"
-major=$(echo $version | cut -f 1 -d .)
-minor=$(echo $version | cut -f 2 -d .)
-patch=$(echo $version | cut -f 3 -d .)
+major=$(echo "$version" | cut -f 1 -d .)
+minor=$(echo "$version" | cut -f 2 -d .)
+patch=$(echo "$version" | cut -f 3 -d .)
 
 # increment version
 if [[ $1 == '--major' ]]; then
-    major=`expr $major + 1`
+    major=$(( "$major" + 1 ))
     minor=0
 elif [[ $1 == '--minor' ]]; then
-    minor=`expr $minor + 1`
+    minor=$(( "$minor" + 1 ))
     patch=0
 elif [[ $1 == '--patch' ]]; then 
-    patch=`expr $patch + 1`
+    patch=$(( "$patch" + 1 ))
 else
     usage
 fi

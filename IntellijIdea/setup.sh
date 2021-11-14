@@ -8,5 +8,5 @@ function usage() {
 
 [[ -z $1 ]] && usage
 
-ln -sf $PWD/templates $1/templates
-ln -sf $PWD/.ideavimrc $HOME/.ideavimrc
+ln -sf "$PWD/templates" "$1/templates"
+ln -sf "$PWD/.ideavimrc" "$HOME/.ideavimrc"
