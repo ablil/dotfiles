@@ -60,12 +60,16 @@
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
-    "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "window.zoomLevel": 1,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/node_modules",
+        "node_modules"
+    ]
 }
