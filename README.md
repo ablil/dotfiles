@@ -1,6 +1,5 @@
 
 # dotfiles -- The developer's quick setup
-[![shellcheck](https://github.com/ablil/dotfiles/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ablil/dotfiles/actions/workflows/shellcheck.yml)
 
 A biased collection of dotfiles with default universal configuration.
 
@@ -16,6 +15,8 @@ For three main reasons:
 # :hammer: Usage
 It is very simple, clone the repository and link symbolically any dotfile you want.
 You may find some script that automate soem tasks also.
+
+**some scripts requires the environment variable $DOTFILES so make sure to set it to absolute path of cloned repo**
 
 *PS: you don't want to link all dotfiles, because it does not make sense to link for example .prettierrc globally*
 
