@@ -19,3 +19,6 @@ alias s=sudo
 alias b=bash
 
 alias dc=docker-compose
+
+# git shortcut
+alias gcln="git clean -fd"
