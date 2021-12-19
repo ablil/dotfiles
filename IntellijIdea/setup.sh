@@ -9,4 +9,5 @@ function usage() {
 [[ -z $1 ]] && usage
 
 ln -sf "$PWD/templates" "$1/templates"
+ln -sf "$PWD/options" "$1/options"
 ln -sf "$PWD/.ideavimrc" "$HOME/.ideavimrc"
