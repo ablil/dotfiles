@@ -1,0 +1,28 @@
+<application>
+  <component name="PostfixTemplates">
+    <template id="error@userDefined" key=".error" provider="builtin.java" language-level="1.3" topmost="true">
+      <conditions>
+        <condition id="non void" />
+      </conditions>
+      <template name="fakeKey" value="logger.error($EXPR$)" toReformat="true" toShortenFQNames="true" />
+    </template>
+    <template id="info@userDefined" key=".info" provider="builtin.java" language-level="1.3" topmost="true">
+      <conditions>
+        <condition id="non void" />
+      </conditions>
+      <template name="fakeKey" value="logger.info($EXPR$)" toReformat="true" toShortenFQNames="true" useStaticImport="true" />
+    </template>
+    <template id="debug@userDefined" key=".debug" provider="builtin.java" language-level="1.3" topmost="true">
+      <conditions>
+        <condition id="non void" />
+      </conditions>
+      <template name="fakeKey" value="logger.debug($EXPR$);" toReformat="true" toShortenFQNames="true" />
+    </template>
+    <template id="warn@userDefined" key=".warn" provider="builtin.java" language-level="1.3" topmost="true">
+      <conditions>
+        <condition id="non void" />
+      </conditions>
+      <template name="fakeKey" value="logger.warn($EXPR$)" toReformat="true" toShortenFQNames="true" />
+    </template>
+  </component>
+</application>
