@@ -18,4 +18,10 @@
       <option name="JAVA_DECLARATION" value="true" />
     </context>
   </template>
+  <template name="param" value="@org.springframework.web.bind.annotation.RequestParam(&quot;$PARAM$&quot;) String $PARAM$" description="Request Param" toReformat="false" toShortenFQNames="true" useStaticImport="true">
+    <variable name="PARAM" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
 </templateSet>
