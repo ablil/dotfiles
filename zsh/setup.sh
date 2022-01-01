@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $(grep -E -q -i 'fedora|redhat' /etc/*release) -eq 0 ]]; then
+if command -v dnf &> /dev/null; then
   sudo dnf install -y curl util-linux-user zsh
-elif [[ $(grep -E -q -i 'debian|bunut|mint' /etc/*release) -eq 0 ]]; then
+elif command -v apt-get &> /dev/null; then
   sudo apt-get install -y curl zsh
 else
   echo "It seems you are not running REHL or Debian based distro !!!"
@@ -10,8 +10,8 @@ else
 fi
 
 # set zsh
-#chsh -s "$(command -v zsh)"
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s "$(command -v zsh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # link dotfiles
 ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
