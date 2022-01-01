@@ -14,10 +14,10 @@ fi
 #sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # link dotfiles
-ln -sf "$DOTFILES/.zshrc" "$HOME/.zshrc"
-ln -sf "$DOTFILES/.exports" "$HOME/.exports"
-ln -sf "$DOTFILES/.aliases" "$HOME/.aliases"
-ln -sf "$DOTFILES/.functions" "$HOME/.functions"
+ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES/zsh/.exports" "$HOME/.exports"
+ln -sf "$DOTFILES/zsh/.aliases" "$HOME/.aliases"
+ln -sf "$DOTFILES/zsh/.functions" "$HOME/.functions"
 
 # private env variables
 touch "$HOME/.exports_private"

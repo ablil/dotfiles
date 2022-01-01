@@ -20,5 +20,5 @@ else
 fi
 
 # link dotfiles
-ln -sf "$DOTFILES/.gitmsg" "$HOME/.gitmsg";
-ln -sf "$DOTFILES/.gitconfig" "$HOME/.gitconfig";
+ln -sf "$DOTFILES/git/.gitmsg" "$HOME/.gitmsg";
+ln -sf "$DOTFILES/git/.gitconfig" "$HOME/.gitconfig";
