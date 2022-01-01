@@ -13,18 +13,12 @@ For three main reasons:
 
 
 # :hammer: Usage
-It is very simple, clone the repository and link symbolically any dotfile you want.
-You may find some script that automate soem tasks also.
-
-**some scripts requires the environment variable $DOTFILES so make sure to set it to absolute path of cloned repo**
-
-*PS: you don't want to link all dotfiles, because it does not make sense to link for example .prettierrc globally*
-
+```
+git clone https://github.com/ablil/dotfiles $HOME/dotfiles
+export DOTFILES=$HOME/dotfiles
+```
 # :ok_hand: Contribute
 Contributions are always welcome, please read [contribution guideline](https://github.com/ablil/dotfiles/blob/master/CONTRIBUTING.md) first.
-
-# :wave: Contact
-If you want to contact me, you can reach me ablil@protonmail.com
 
 # :police_car: License
 This project is released under [MIT License](https://github.com/ablil/dotfiles/blob/master/README.md).
