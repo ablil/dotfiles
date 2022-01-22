@@ -1,12 +1,7 @@
 #!/bin/bash
 
-function usage() {
-  echo "bash $0 /home/<user>/.config/JetBrains/InelljiXXX/"
-  exit 1;
-}
+[[ -z $DOTFILES ]] && echo "Variable \$DOTFILES is not set && exit 1
+[[ -z $1 ]] && echo "bash $0 /home/<user>/.config/JetBrains/InelljiXXX/" && exit 1
 
-
-[[ -z $1 ]] && usage
-
-ln -sf "$PWD/templates" "$1/templates"
-ln -sf "$PWD/.ideavimrc" "$HOME/.ideavimrc"
+ln -sf "$DOTFILES/IntellijIdea/templates" "$1/templates"
+ln -sf "$DOTFILES/IntellijIdea/.ideavimrc" "$HOME/.ideavimrc"

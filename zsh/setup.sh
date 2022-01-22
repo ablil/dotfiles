@@ -1,19 +1,7 @@
 #!/bin/bash
 
-if command -v dnf &> /dev/null; then
-  sudo dnf install -y curl util-linux-user zsh
-elif command -v apt-get &> /dev/null; then
-  sudo apt-get install -y curl zsh
-else
-  echo "It seems you are not running REHL or Debian based distro !!!"
-  exit 1;
-fi
+[[ -z $DOTFILES ]] && echo "variable \$DOTFILES is not set" && exit 1
 
-# set zsh
-chsh -s "$(command -v zsh)"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# link dotfiles
 ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES/zsh/.exports" "$HOME/.exports"
 ln -sf "$DOTFILES/zsh/.aliases" "$HOME/.aliases"
