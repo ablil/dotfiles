@@ -17,4 +17,11 @@ git clone https://github.com/ablil/dotfiles $HOME/dotfiles && export DOTFILES=$H
 * tmux
 * git 
 
-**Make sure before you do anything, the environment variable `$DOTFILES` is set.**
+**Make sure before you do anything, the environment variable `$DOTFILES` is set, and run the following command**
+
+```
+#Fedora
+sudo dnf install vim git curl wget vlc tmux
+# Ubuntu
+sudo dnf install vim git curl wget vlc tmux
+```
