@@ -19,6 +19,8 @@ touch "$HOME/.aliases_private"
 
 # Vim
 ln -sf "$DOTFILES/.vimrc" "$HOME/.vimrc"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # Tmux
 ln -sf "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
