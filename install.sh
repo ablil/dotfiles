@@ -17,6 +17,10 @@ ln -sf "$DOTFILES/.zprofile" "$HOME/.zprofile"
 touch "$HOME/.exports_private"
 touch "$HOME/.aliases_private"
 
+# set zsh theme
+[[ ! -d "$HOME/.oh-my-zsh/themes" ]] && mkdir "$HOME/.oh-my-zsh/themes/" -p 
+ln -sf "$DOTFILES/.ablil.zsh-them" "$HOME/.oh-my-zsh/themes/ablil.zsh-theme"
+
 # Vim
 ln -sf "$DOTFILES/.vimrc" "$HOME/.vimrc"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
