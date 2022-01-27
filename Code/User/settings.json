@@ -74,5 +74,7 @@
     ],
     "workbench.colorTheme": "Gruvbox Dark (Hard)",
     "vsicons.dontShowNewVersionMessage": true,
-    "editor.cursorSmoothCaretAnimation": true
+    "editor.cursorSmoothCaretAnimation": true,
+    "keyboard.dispatch": "keyCode",
+    "editor.minimap.enabled": false
 }
