@@ -49,7 +49,7 @@
         "fixme"
     ],
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
@@ -71,5 +71,8 @@
     "todo-tree.filtering.excludeGlobs": [
         "**/node_modules",
         "node_modules"
-    ]
+    ],
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.cursorSmoothCaretAnimation": true
 }

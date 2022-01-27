@@ -1,24 +1,27 @@
 
 # dotfiles -- The developer's quick setup
 
-A biased collection of dotfiles with default universal configuration.
+A collections of dotfiles to speed up setting up a new environment and description of my environment setup.
+All the files are centralized in one place, which make it easy to keep track of changes with git :wink:.
 
-*dotfiles are used to customize system configuration, they are derived from Unix-like configuration files that starts with a dot. Google this stuff for more info*
+**How to use**
 
-# :thinking: why ?
-For three main reasons:
-* Centralize all dotfiles in one place
-* Keep track of dotfiles
-* Productivity and speed
+1. Clone the repo and set **\$DOTFILES** environment variable
 
-
-# :hammer: Usage
 ```
-git clone https://github.com/ablil/dotfiles $HOME/dotfiles
-export DOTFILES=$HOME/dotfiles
+git clone https://github.com/ablil/dotfiles $HOME/dotfiles && export DOTFILES=$HOME/dotfiles
 ```
-# :ok_hand: Contribute
-Contributions are always welcome, please read [contribution guideline](https://github.com/ablil/dotfiles/blob/master/CONTRIBUTING.md) first.
+2. Run the script **install.sh** to configure basic dotfiles which includes:
+* zsh & oh-my-zsh
+* vim
+* tmux
+* git 
 
-# :police_car: License
-This project is released under [MIT License](https://github.com/ablil/dotfiles/blob/master/README.md).
+**Make sure before you do anything, the environment variable `$DOTFILES` is set, and run the following command**
+
+```
+#Fedora
+sudo dnf install vim git curl wget vlc tmux
+# Ubuntu
+sudo dnf install vim git curl wget vlc tmux
+```

@@ -16,6 +16,7 @@
 	editor = vi
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
+	autocrlf = input
 [status]
 	branch = true
 [branch]
@@ -24,7 +25,5 @@
 [user]
 	email = ablil@protonmail.com
 	name = ablil
-[commit]
-	template = /home/ablil/dotfiles/.gitmsg
 [init]
 	defaultBranch = main
