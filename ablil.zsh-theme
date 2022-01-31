@@ -5,12 +5,14 @@ function get_host {
 }
 
 function get_status() {
-  if [[ $? != 0 ]]; then
-    echo '?'
+  if [[ $? -eq 0 ]]; then
+    echo '%F{green}>%F{reset_color} '
+  else
+    echo '%F{red}>%F{reset_color} '
   fi
 }
 
-PROMPT='$(get_status)> '
+PROMPT='$(get_status)'
 RPROMPT='%2c%{$fg[green]%}$(git_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗%{$reset_color%}"
