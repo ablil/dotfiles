@@ -11,7 +11,7 @@ set cursorline              " highlight line under cursor
 
 set nocompatible            " be iMproved, required
 filetype off                " required
-colorscheme default
+colorscheme delek
 
 " Plugins
 set rtp+=~/.vim/bundle/Vundle.vim
