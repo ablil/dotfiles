@@ -3,8 +3,10 @@
 [[ -z $DOTFILES ]] && echo "variable \$DOTFILES is not set" && exit 1
 
 # Install oh-myzsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh -s /bin/zsh "$USER"
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  chsh -s /bin/zsh "$USER"
+fi
 
 # Zsh
 ln -sf "$DOTFILES/.zshrc" "$HOME/.zshrc"
@@ -23,7 +25,7 @@ ln -sf "$DOTFILES/.ablil.zsh-theme" "$HOME/.oh-my-zsh/themes/ablil.zsh-theme"
 
 # Vim
 ln -sf "$DOTFILES/.vimrc" "$HOME/.vimrc"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 # Tmux
