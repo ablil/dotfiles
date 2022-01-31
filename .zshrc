@@ -12,6 +12,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -f ~/.exports ]] && source ~/.exports
 [[ -f ~/.exports_private ]] && source ~/.exports_private
+[[ -f ~/.exports_hybris ]] && source ~/.exports_hybris
 [[ -f ~/.aliases ]] && source ~/.aliases
-[[ -pf ~/.aliases_private ]] && source ~/.aliases_private
+[[ -f ~/.aliases_private ]] && source ~/.aliases_private
+[[ -f ~/.aliases_hybris ]] && source ~/.aliases_hybris
 [[ -f ~/.functions ]] && source ~/.functions
