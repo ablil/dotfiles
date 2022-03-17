@@ -1,0 +1,31 @@
+<templateSet group="Impex">
+  <template name="scriptingcronjob" value="REMOVE CronJob[batchmode = true]; code[unique = true]&#10;                                ; $SCRIPTINGCRONJOBCODE$&#10;&#10;REMOVE ScriptingJob[batchmode = true]; code[unique = true]&#10;                                     ; $SCRIPTINGJOBCODE$&#10;&#10;REMOVE Script[batchmode = true]; code[unique = true]&#10;                               ; $SCRIPTJOBNAME$&#10;INSERT_UPDATE Script; scriptType(code); active; code[unique = true]; version; content&#10;                    ; GROOVY          ; true  ; $SCRIPTJOBNAME$    ; 0      ; &quot;script content here&quot;&#10;&#10;INSERT_UPDATE ScriptingJob; code[unique = true]; scriptURI&#10;                          ; $SCRIPTINGJOBCODE$ ; model://$SCRIPTJOBNAME$&#10;&#10;&#10;INSERT_UPDATE CronJob; code[unique = true]    ; job(code)          ; sessionLanguage(isocode)&#10;                     ; $SCRIPTINGCRONJOBCODE$ ; $SCRIPTINGJOBCODE$ ; en" description="Create a new scripting cronjob" toReformat="false" toShortenFQNames="true">
+    <variable name="SCRIPTINGCRONJOBCODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SCRIPTINGJOBCODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="SCRIPTJOBNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="IMPEX" value="true" />
+    </context>
+  </template>
+  <template name="ifprod" value="#% if: (&quot;PROD&quot;.equals(Config.getParameter(&quot;target.deployment.system&quot;)));&#10;$TYPEHERE$&#10;#% endif:" description="If Prod environment" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPEHERE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="IMPEX" value="true" />
+    </context>
+  </template>
+  <template name="contentCV" value="$version = $VERSION$&#10;$contentCatalog = $CONTENTCATAGALOG$&#10;$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default = $contentCatalog]), CatalogVersion.version[default = $version])[default = $contentCatalog:$version, unique = true]&#10;" description="content catalog definition" toReformat="false" toShortenFQNames="true">
+    <variable name="VERSION" expression="&quot;staged&quot;" defaultValue="staged" alwaysStopAt="true" />
+    <variable name="CONTENTCATAGALOG" expression="&quot;scottContentCatalog&quot;" defaultValue="scottContentCatalog" alwaysStopAt="true" />
+    <context>
+      <option name="IMPEX" value="true" />
+    </context>
+  </template>
+  <template name="translationmessage" value="$storefrontName = $STOREFRONT$&#10;INSERT_UPDATE TranslationMessage; code[unique = true]; key   ; storefrontName[default = $storefrontName]; priority[default = 100]; value[lang = en]&#10;                                ; $KEY$_$STOREFRONT$ ; $KEY$ ;                                          ;                        ; $VALUE$                                " description="Create a new translation message" toReformat="false" toShortenFQNames="true">
+    <variable name="STOREFRONT" expression="&quot;scottsportsb2cstorefront&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="IMPEX" value="true" />
+    </context>
+  </template>
+</templateSet>
