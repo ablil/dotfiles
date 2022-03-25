@@ -7,7 +7,7 @@
       <option name="IMPEX" value="true" />
     </context>
   </template>
-  <template name="ifprod" value="#% if: (&quot;PROD&quot;.equals(Config.getParameter(&quot;target.deployment.system&quot;)));&#10;$TYPEHERE$&#10;#% endif:" description="If Prod environment" toReformat="false" toShortenFQNames="true">
+  <template name="ifprod" value="#% if: &quot;PROD&quot;.equals(Config.getParameter(&quot;target.deployment.system&quot;));&#10;$TYPEHERE$&#10;#% endif:" description="If Prod environment" toReformat="true" toShortenFQNames="true">
     <variable name="TYPEHERE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="IMPEX" value="true" />
