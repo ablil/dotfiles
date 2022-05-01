@@ -15,7 +15,6 @@
     },
     "editor.wordWrap": "wordWrapColumn",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "editor.smoothScrolling": true,
     "mdb.sendTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "[html]": {
@@ -53,7 +52,6 @@
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
-    "vim.highlightedyank.enable": true,
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
@@ -66,16 +64,13 @@
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "window.zoomLevel": 1,
     "todo-tree.filtering.excludeGlobs": [
         "**/node_modules",
         "node_modules"
     ],
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "workbench.colorTheme": "Theme + Dark Blue Theme",
     "vsicons.dontShowNewVersionMessage": true,
-    "editor.cursorSmoothCaretAnimation": true,
     "keyboard.dispatch": "keyCode",
-    "editor.minimap.enabled": false,
     "eslint.alwaysShowStatus": true,
     "eslint.packageManager": "yarn",
     "[jsonc]": {
@@ -83,5 +78,11 @@
     },
     "files.associations": {
         "*.js": "javascriptreact"
-    }
+    },
+    "antdRush.defaultAntdMajorVersion": "^4",
+    "antdRush.language": "English",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "tabnine.experimentalAutoImports": true,
+    "window.zoomLevel": 1
 }
