@@ -31,3 +31,4 @@ alias op=xdg-open
 alias yt=yt-dlp
 alias igrep='grep -i'
 alias esed'sed -E'
+alias clip="xclip -selection clipboard"
