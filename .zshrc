@@ -18,3 +18,8 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.aliases_hybris ]] && source ~/.aliases_hybris
 [[ -f ~/.functions ]] && source ~/.functions
 [[ -f ~/.functions_hybris ]] && source ~/.functions_hybris
+fpath=($fpath "/home/ablil/.zfunctions")
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten

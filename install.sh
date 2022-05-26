@@ -15,6 +15,8 @@ ln -sf "$DOTFILES/.aliases" "$HOME/.aliases"
 ln -sf "$DOTFILES/.functions" "$HOME/.functions"
 ln -sf "$DOTFILES/.zprofile" "$HOME/.zprofile"
 
+sudo npm install --global typewritten
+
 # create private dotfiles
 touch "$HOME/.exports_private"
 touch "$HOME/.aliases_private"
