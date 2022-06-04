@@ -22,7 +22,7 @@ set nowrapscan
 
 set nocompatible            " be iMproved, required
 filetype off                " required
-colorscheme delek
+colorscheme desert
 
 " mapping
 
