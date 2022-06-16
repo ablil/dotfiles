@@ -48,7 +48,6 @@
         "fixme"
     ],
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-    "workbench.iconTheme": "vscode-icons",
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
@@ -68,7 +67,6 @@
         "**/node_modules",
         "node_modules"
     ],
-    "workbench.colorTheme": "Theme + Dark Blue Theme",
     "vsicons.dontShowNewVersionMessage": true,
     "keyboard.dispatch": "keyCode",
     "eslint.alwaysShowStatus": true,
@@ -84,5 +82,23 @@
     "bracket-pair-colorizer-2.depreciation-notice": false,
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "tabnine.experimentalAutoImports": true,
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "One Dark Pro Mix",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "monospace",
+    "editor.cursorStyle": "block",
+    "editor.accessibilitySupport": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.minimap.maxColumn": 80,
+    "editor.minimap.renderCharacters": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.indent": 20,
+    "workbench.view.alwaysShowHeaderActions": true,
+    "scm.alwaysShowActions": true,
+    "scm.defaultViewMode": "tree",
+    "scm.diffDecorationsGutterPattern": {
+        "added": true
+    },
+    "scm.inputFontSize": 16
 }
