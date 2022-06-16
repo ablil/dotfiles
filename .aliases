@@ -17,6 +17,7 @@ alias s=sudo
 alias b=bash
 alias y=yarn
 alias n=npm
+alias a=ant
 
 # docker
 alias dc=docker-compose
