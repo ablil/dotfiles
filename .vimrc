@@ -1,4 +1,3 @@
-syntax on " highlight syntax
 
 " Inder using 2 spaces
 set tabstop=2
@@ -40,3 +39,5 @@ let &t_EI = "\e[2 q"
 
 " use system clipboard config
 set clipboard=unnamedplus
+
+syntax on " highlight syntax
