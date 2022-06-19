@@ -1,20 +1,12 @@
-# Simple theme based on my old zsh settings.
+#!/bin/zsh
 
-function get_host {
-	echo '@'$HOST
-}
+NEWLINE=$'\n'
 
-function get_status() {
-  if [[ $? -eq 0 ]]; then
-    echo '%F{green}>%F{reset_color} '
-  else
-    echo '%F{red}>%F{reset_color} '
-  fi
-}
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[orange]%} ✈"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[orange]%} ✭"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[orange]%} ➦"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[orange]%} ✂"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[orange]%} ✱"
 
-PROMPT='$(get_status)'
-RPROMPT='%2c%{$fg[green]%}$(git_prompt_info)%{$reset_color%}'
-
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_PREFIX=" "
-ZSH_THEME_GIT_PROMPT_SUFFIX=""
+PS1='%F{166}%~ %F{106}$(git_current_branch)$(git_prompt_status) %{$reset_color%} ${NEWLINE}%# '
