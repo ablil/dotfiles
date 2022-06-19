@@ -68,6 +68,15 @@ oh-my-zsh, vim, tmux & git
 
 Run install.sh script for each thing your want to configure.
 
+
+# Terminal theme
+|Item|Value
+|----|----
+|Background color|1E1E1E
+|Text color| D3D7CF
+|Font| Monospace 12
+
+
 # License
 
 Distributed under the MIT license, see `LICENSE.md` for more information.
