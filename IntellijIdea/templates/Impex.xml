@@ -40,4 +40,12 @@
       <option name="IMPEX" value="true" />
     </context>
   </template>
+  <template name="newaccount" value="$passwordEncoding = pbkdf2&#10;$defaultPassword = Scott2023&#10;$setPassword = @password[translator = de.hybris.platform.impex.jalo.translators.ConvertPlaintextToEncodedUserPasswordTranslator][default = '$passwordEncoding:$defaultPassword']&#10;&#10;INSERT_UPDATE Employee; uid[unique = true]; name            ; groups(uid)[mode = append]; managedStores(uid)[mode = append]; sessionLanguage(isocode)[default = en]; sessionCurrency(isocode)[default = CHF]; $setPassword&#10;                      ; $UID$   ; $FULLNAME$ ; $GROUP$&#10;" description="Create new employee account" toReformat="false" toShortenFQNames="true">
+    <variable name="UID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FULLNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="GROUP" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="IMPEX" value="true" />
+    </context>
+  </template>
 </templateSet>

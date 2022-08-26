@@ -1,0 +1,7 @@
+<templateSet group="cses.fi">
+  <template name="FastReader" value="static class FastReader {&#10;    java.io.BufferedReader reader;&#10;    java.util.StringTokenizer tokenizer;&#10;&#10;    public FastReader(java.io.InputStream stream) {&#10;        reader = new java.io.BufferedReader(new java.io.InputStreamReader(stream));&#10;    }&#10;&#10;    String next() {&#10;        while (tokenizer == null || !tokenizer.hasMoreElements()) {&#10;            try {&#10;                tokenizer = new java.util.StringTokenizer(reader.readLine());&#10;            } catch (java.io.IOException e) {&#10;                e.printStackTrace();&#10;            }&#10;        }&#10;&#10;        return tokenizer.nextToken();&#10;    }&#10;&#10;    String nLine() {&#10;        String str = &quot;&quot;;&#10;        try {&#10;            str = reader.readLine();&#10;        } catch (java.io.IOException e) {&#10;            e.printStackTrace();&#10;        }&#10;        return str;&#10;    }&#10;&#10;    public int nInt() {&#10;        return Integer.parseInt(next());&#10;    }&#10;&#10;    public long nLong() {&#10;        return Long.parseLong(next());&#10;    }&#10;&#10;    public double nDouble() {&#10;        return Double.parseDouble(next());&#10;    }&#10;}" description="Fast input reader for competitve programming" toReformat="true" toShortenFQNames="true" useStaticImport="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
