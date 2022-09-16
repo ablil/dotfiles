@@ -24,6 +24,11 @@ alias dc=docker-compose
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 
+# ant 
+alias ad="ant deploy"
+alias aca="ant clean all"
+alias ab="ant build"
+
 # git shortcut
 alias gcln="git clean -fd"
 
