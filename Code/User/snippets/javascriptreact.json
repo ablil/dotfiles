@@ -15,6 +15,16 @@
   "handle form submit function": {
     "prefix": "handleSubmit",
     "body": ["const handleSubmit = (evt) => {", "\tevt.preventDefault();", "}"],
-    "description": "prevent defautl event"
+    "description": "prevent default event"
+  },
+  "handle input attributes": {
+    "prefix": "handleAttributes",
+    "body": [
+      "const handleAttributeChange = (evt) => {",
+      "\tconst attr = evt.target.dataset['attr'];",
+      "\tconst value = evt.target.value;",
+      "\t$1",
+      "}"
+    ]
   }
 }

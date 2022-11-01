@@ -51,11 +51,6 @@
     "explorer.confirmDragAndDrop": false,
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
     "editor.multiCursorModifier": "ctrlCmd",
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -75,7 +70,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "files.associations": {
-        "*.js": "javascriptreact"
+        "*.js": "javascriptreact",
+        "*.ts": "typescriptreact"
     },
     "antdRush.defaultAntdMajorVersion": "^4",
     "antdRush.language": "English",
@@ -83,14 +79,12 @@
     "vim.mouseSelectionGoesIntoVisualMode": false,
     "tabnine.experimentalAutoImports": true,
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "One Dark Pro Mix",
     "editor.fontSize": 16,
     "editor.fontFamily": "monospace",
-    "editor.cursorStyle": "block",
     "editor.accessibilitySupport": "off",
     "editor.formatOnPaste": true,
     "editor.formatOnSaveMode": "modifications",
-    "editor.minimap.maxColumn": 80,
+    "editor.minimap.maxColumn": 100,
     "editor.minimap.renderCharacters": false,
     "workbench.iconTheme": "vscode-icons",
     "workbench.tree.indent": 20,
@@ -100,5 +94,12 @@
     "scm.diffDecorationsGutterPattern": {
         "added": true
     },
-    "scm.inputFontSize": 16
+    "scm.inputFontSize": 16,
+    "python.formatting.provider": "black",
+    "xml.format.maxLineWidth": 100,
+    "vim.textwidth": 100,
+    "prettier.printWidth": 100,
+    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+    "html.format.wrapLineLength": 100,
+    "editor.wordWrapColumn": 100
 }
