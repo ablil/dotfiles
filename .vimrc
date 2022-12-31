@@ -30,6 +30,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surrond'
+Plugin 'udalov/kotlin-vim'
 call vundle#end()
 
 " Change the cursor in different modes
