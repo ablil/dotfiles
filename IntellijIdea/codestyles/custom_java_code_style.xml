@@ -1,5 +1,5 @@
 <code_scheme name="custom-java-code-style" version="173">
-  <option name="LINE_SEPARATOR" value="&#xA;" />
+  <option name="LINE_SEPARATOR" value="&#10;" />
   <option name="RIGHT_MARGIN" value="80" />
   <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="true" />
   <JavaCodeStyleSettings>
@@ -9,6 +9,9 @@
     <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
     <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="99" />
   </JavaCodeStyleSettings>
+  <JetCodeStyleSettings>
+    <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+  </JetCodeStyleSettings>
   <codeStyleSettings language="JAVA">
     <option name="RIGHT_MARGIN" value="100" />
     <option name="KEEP_LINE_BREAKS" value="false" />
@@ -59,5 +62,9 @@
   </codeStyleSettings>
   <codeStyleSettings language="JSP">
     <option name="RIGHT_MARGIN" value="90" />
+  </codeStyleSettings>
+  <codeStyleSettings language="kotlin">
+    <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
+    <option name="RIGHT_MARGIN" value="100" />
   </codeStyleSettings>
 </code_scheme>
