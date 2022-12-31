@@ -20,3 +20,15 @@ function grl() {
 	git restore --staged $1
 	git restore $1
 }
+
+function feat() {
+  git commit -m "feat: $@"
+}
+
+function fix() {
+  git commit -m "fix: $@"
+}
+
+function refactor() {
+  giit commit -m "refactor: $@"
+}
