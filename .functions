@@ -21,14 +21,14 @@ function grl() {
 	git restore $1
 }
 
-function feat() {
+function gfeat() {
   git commit -m "feat: $@"
 }
 
-function fix() {
+function gfix() {
   git commit -m "fix: $@"
 }
 
-function refactor() {
+function grefactor() {
   giit commit -m "refactor: $@"
 }
