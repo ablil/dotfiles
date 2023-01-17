@@ -1,24 +1,21 @@
 #!/bin/bash
 
-declare -a extensions
-extensions=(
-  bradlc.vscode-tailwindcss
-  csstools.postcss
-  dbaeumer.vscode-eslint
-  dsznajder.es7-react-js-snippets
-  esbenp.prettier-vscode
-  formulahendry.auto-rename-tag
-  Gruntfuggly.todo-tree
-  ms-python.python
-  teabyii.ayu
-  tomphilbin.gruvbox-themes
-  vscode-icons-team.vscode-icons
-  vscodevim.vim
-)
 
-[[ -z $DOTFILES ]] && echo "Variable \$DOTFILES is not set" && exit 1
-ln -sf "$DOTFILES/Code/*" "$HOME/.config/Code/"
+if [[ -z $DOTFILES ]]; then
+  echo "env variable $DOTFILES is missing!"
+  exit 1;
+elif [[ ! -d $HOME/.config/Code ]]; then
+  echo "$HOME/.config/Code is missing, make sure vscode is installed!"
+  exit 2;
+else
+  # link config folder
+  ln -sf "$DOTFILES/Code/*" "$HOME/.config/Code/"
 
-for extension in "${extensions[@]}"; do
-  code --install-extension "$extension"
-done
+  # install extensions
+  grep -v '^ *#' < extensions.txt | while IFS= read -r line
+  do
+    code --force --install-extension "$line"
+  done
+
+  echo "Done"
+fi

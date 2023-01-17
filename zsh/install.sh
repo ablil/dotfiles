@@ -1,6 +1,10 @@
 #!/bin/bash
+# Configure zsh
 
-[[ -z $DOTFILES ]] && echo "variable \$DOTFILES is not set" && exit 1
+if [[ -z $DOTFILES ]]; then
+  echo "env variable DOTFILES is missing!"
+  exit 1;
+fi
 
 # Install oh-myzsh
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
@@ -9,13 +13,11 @@ if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
 fi
 
 # Zsh
-ln -sf "$DOTFILES/.zshrc" "$HOME/.zshrc"
-ln -sf "$DOTFILES/.exports" "$HOME/.exports"
-ln -sf "$DOTFILES/.aliases" "$HOME/.aliases"
-ln -sf "$DOTFILES/.functions" "$HOME/.functions"
-ln -sf "$DOTFILES/.zprofile" "$HOME/.zprofile"
-
-sudo npm install --global typewritten
+ln -sf "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES/zsh/.exports" "$HOME/.exports"
+ln -sf "$DOTFILES/zsh/.aliases" "$HOME/.aliases"
+ln -sf "$DOTFILES/zsh/.functions" "$HOME/.functions"
+ln -sf "$DOTFILES/zsh/.zprofile" "$HOME/.zprofile"
 
 # create private dotfiles
 touch "$HOME/.exports_private"
@@ -23,7 +25,7 @@ touch "$HOME/.aliases_private"
 
 # set zsh theme
 [[ ! -d "$HOME/.oh-my-zsh/themes" ]] && mkdir "$HOME/.oh-my-zsh/themes/" -p 
-ln -sf "$DOTFILES/ablil.zsh-theme" "$HOME/.oh-my-zsh/themes/ablil.zsh-theme"
+ln -sf "$DOTFILES/zsh/ablil.zsh-theme" "$HOME/.oh-my-zsh/themes/ablil.zsh-theme"
 
 # Vim
 ln -sf "$DOTFILES/.vimrc" "$HOME/.vimrc"
@@ -43,3 +45,6 @@ Host github.com
   IdentityFile ~/.ssh/id_github
 EOF
 echo "Make sure you generate ssh key ~/.ssh/id_github for git config"
+
+
+echo "Done"

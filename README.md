@@ -5,9 +5,7 @@ My collection of dotfiles, config, snippets ...
 * Everything in one place and tracked by Git
 * speed up config process on new machine
 
-# Getting started
-
-## Prerequisites
+**Prerequisites**
 
 Some necessary packages to install:
 
@@ -22,7 +20,7 @@ Before running any script, make sure the env variable **$DOTFILES** is set to th
 ```sh
 $ git clone git@github.com:ablil/dotfiles $HOME/dotfiles && export DOTFILES=$HOME/dotfiles
 ```
-## Usage
+**Usage**
 
 This repo contains two type of files: 
 
@@ -33,9 +31,9 @@ or
 snippets/config file you can link symbolically whenever you need (eg, .prettierrc, .lintsagedrc ..)
 
 
-# Manual configs
+**Manual configs**
 
-## Terminal color scheme
+Terminal color scheme
 
 | Item             | Value        |
 | ---------------- | ------------ |

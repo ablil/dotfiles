@@ -16,11 +16,6 @@ function mkgit() {
   mkdir $1 && cd $1 && git init && touch .gitignore && git config --local credential.helper store
 }
 
-function grl() {
-	git restore --staged $1
-	git restore $1
-}
-
 function gfeat() {
   git commit -m "feat: $@"
 }

@@ -1,17 +1,9 @@
 [alias]
-    l = log --pretty=oneline --graph --abbrev-commit -n 10
-    la = log --all --oneline --graph --abbrev-commit
     s = status
     ss = status -s
-    a = add
-    ap = add --patch
-    au = add -u
     c = commit
     cm = commit -m
-    rc = commit --amend --no-edit
     d = diff
-    dh = diff HEAD
-    ps = push
 [core]
 	editor = vi
   excludesfile = ~/.gitignore
