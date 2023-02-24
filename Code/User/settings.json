@@ -99,7 +99,7 @@
     "xml.format.maxLineWidth": 100,
     "vim.textwidth": 100,
     "prettier.printWidth": 100,
-    "workbench.colorTheme": "Community Material Theme Darker High Contrast",
+    "workbench.colorTheme": "Default Dark+ Experimental",
     "html.format.wrapLineLength": 100,
     "editor.wordWrapColumn": 100
 }
