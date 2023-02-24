@@ -19,3 +19,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.functions ]] && source ~/.functions
 [[ -f ~/.functions_hybris ]] && source ~/.functions_hybris
 fpath=($fpath "/home/ablil/.zfunctions")
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
