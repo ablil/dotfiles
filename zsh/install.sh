@@ -36,7 +36,7 @@ ln -sf "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
 # Git
 ln -sf "$DOTFILES/.gitconfig" "$HOME/.gitconfig"
 [[ ! -f "$HOME/.ssh/config" ]] && mkdir "$HOME/.ssh" && touch "$HOME/.ssh/config"
-cat >> "$HOME/.ssh/config" << EOF
+cat > "$HOME/.ssh/config" << EOF
 Host github.com
   HostName github.com
   User git
