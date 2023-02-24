@@ -29,8 +29,6 @@ ln -sf "$DOTFILES/zsh/ablil.zsh-theme" "$HOME/.oh-my-zsh/themes/ablil.zsh-theme"
 
 # Vim
 ln -sf "$DOTFILES/.vimrc" "$HOME/.vimrc"
-[[ ! -d "$HOME/.vim/bundle/Vundle.vim" ]] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
 
 # Tmux
 ln -sf "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
