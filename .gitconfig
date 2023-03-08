@@ -1,9 +1,5 @@
 [alias]
-    s = status
-    ss = status -s
-    c = commit
-    cm = commit -m
-    d = diff
+    ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
 [core]
 	editor = vi
   excludesfile = ~/.gitignore
