@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -f ~/.aliases_private ]] && source ~/.aliases_private
 [[ -f ~/.aliases_hybris ]] && source ~/.aliases_hybris
 [[ -f ~/.functions ]] && source ~/.functions
-[[ -f ~/.functions_hybris ]] && source ~/.functions_hybris
+[[ -f ~/.functions_private ]] && source ~/.functions_private
 fpath=($fpath "/home/ablil/.zfunctions")
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
