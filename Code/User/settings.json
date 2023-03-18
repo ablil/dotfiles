@@ -101,5 +101,9 @@
     "prettier.printWidth": 100,
     "workbench.colorTheme": "Default Dark+ Experimental",
     "html.format.wrapLineLength": 100,
-    "editor.wordWrapColumn": 100
+    "editor.wordWrapColumn": 100,
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.handleKeys": {
+      "<C-t>": false
+    }
 }
