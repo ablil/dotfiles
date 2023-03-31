@@ -25,5 +25,9 @@ function gfix() {
 }
 
 function grefactor() {
-  giit commit -m "refactor: $@"
+  git commit -m "refactor: $@"
+}
+
+function commit() {
+  git commit -m "$*"
 }
