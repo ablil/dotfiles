@@ -4,11 +4,13 @@ set expandtab
 set incsearch
 set hlsearch
 set smartindent
+set showcmd
 
 set shiftwidth=4
 set tabstop=4
 set modelines=0     " turned off for security reasons
 set clipboard=unnamedplus
+set mouse=a
 
 colorscheme default
 
@@ -29,5 +31,4 @@ let &t_EI = "\e[2 q"
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
-Plug 'vim-airline/vim-airline'
 call plug#end()
