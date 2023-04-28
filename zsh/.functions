@@ -16,18 +16,7 @@ function mkgit() {
   mkdir $1 && cd $1 && git init && touch .gitignore && git config --local credential.helper store
 }
 
-function gfeat() {
-  git commit -m "feat: $@"
-}
 
-function gfix() {
-  git commit -m "fix: $@"
-}
-
-function grefactor() {
-  git commit -m "refactor: $@"
-}
-
-function commit() {
+function c() {
   git commit -m "$*"
 }
