@@ -1,36 +1,33 @@
-
-" Inder using 2 spaces
-set tabstop=2
-
-" When shifting, indent using two spaces
-set shiftwidth=2
-
-" Convert tabs to spaces
+set nocompatible
+set rnu nu
 set expandtab
-set smartindent             " auto indent on new line
+set incsearch
+set hlsearch
+set smartindent
 
-" Set relative numbers on gutter
-set relativenumber
+set shiftwidth=4
+set tabstop=4
+set modelines=0     " turned off for security reasons
+set clipboard=unnamedplus
 
-" Highlight line under cursor
-set cursorline
+colorscheme default
 
-" When searching, and going to next occurence with n
-" do NOT wrap to start of file after reaching EOF
-set nowrapscan
 
-set nocompatible            " be iMproved, required
-filetype off                " required
-colorscheme desert
-
-" mapping
+" STOP USING THE FUCKING ARROW KEYS
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Change the cursor in different modes
 let &t_SI = "\e[5 q"
 let &t_SR = "\e[3 q"
 let &t_EI = "\e[2 q"
 
-" use system clipboard config
-set clipboard=unnamedplus
 
-syntax on " highlight syntax
+" PLUGINS
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'udalov/kotlin-vim'
+Plug 'vim-airline/vim-airline'
+call plug#end()
