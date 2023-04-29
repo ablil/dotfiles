@@ -1,9 +1,0 @@
-# includes user bin to PATH
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-
-# make vim default editor
-export EDITOR='vim'
-
-# HOME variables
-export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin\/java//')"
-export M2_HOME="/usr/share/maven"

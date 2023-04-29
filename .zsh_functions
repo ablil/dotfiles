@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
 function mk() {
   mkdir $1 && cd $1
 }
 
+# touch but for nested files
 function mkfile() {
   f_dirname=$(dirname $1)
   if [[ ! -d $f_dirname ]]; then
-    mkdir -p $f_dirname
+      mkdir -p $f_dirname
   fi
   touch $1
 }
@@ -17,6 +18,7 @@ function mkgit() {
 }
 
 
-function c() {
+# example: commit just type your commit message directly in the terminal
+function commit() {
   git commit -m "$*"
 }
