@@ -1,37 +1,30 @@
 # Dotfiles
 My collection of dotfiles, config, snippets ...
 
-**Benefits**:
-* Everything in one place and tracked by Git
-* speed up config process on new machine
+## Pre-requisites
+Make sure the following packages are installed
+* zsh
+* oh-my-zsh
+* curl
+* git
 
-**Prerequisites**
+## Usage
 
-Some necessary packages to install:
-
+1. clone the repo
 ```sh
-# Ubuntu
-$ sudo apt install -y vim git curl wget vlc tmux
-# Fedora
-$ sudo dnf install -y vim git curl wget vlc tmux
+git clone https://github.com/ablil/dotfiles $HOME/.dotfiles
+```
+2. Set env variable
+```sh
+export DOTFILES=$HOME/.dotfiles
 ```
 
-Before running any script, make sure the env variable **$DOTFILES** is set to the repo directory.
+3. Run 
 ```sh
-$ git clone git@github.com:ablil/dotfiles $HOME/dotfiles && export DOTFILES=$HOME/dotfiles
+bash $DOTFILES/run.sh
 ```
-**Usage**
 
-This repo contains two type of files: 
-
-install scrips (install.sh) which you can run to configure everything for you (eg, vscode settings and snippets ...)
-
-or 
-
-snippets/config file you can link symbolically whenever you need (eg, .prettierrc, .lintsagedrc ..)
-
-
-**Manual configs**
+## Manual config
 
 Terminal color scheme
 
