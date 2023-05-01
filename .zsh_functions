@@ -19,6 +19,6 @@ function mkgit() {
 
 
 # example: commit just type your commit message directly in the terminal
-function commit() {
+function cm() {
   git commit -m "$*"
 }
