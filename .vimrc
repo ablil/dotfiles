@@ -29,6 +29,7 @@ let &t_EI = "\e[2 q"
 
 " PLUGINS
 call plug#begin()
-Plug 'tpope/vim-surround'
 Plug 'udalov/kotlin-vim'
+Plug 'tpope/vim-surround'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
