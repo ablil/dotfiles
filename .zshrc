@@ -13,9 +13,6 @@ ZSH_THEME="ablil"
 # Uncomment the following line to change how often to auto-update (in days).
 zstyle ':omz:update' frequency 13
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -30,7 +27,7 @@ plugins=(git gitignore docker docker-compose one-character)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_functions
-source $HOME/.aliases_private
+[[ -f $HOME/.zsh_exports ]] && source $HOME/.zsh_exports # private exports
 
 # User configuration
 
