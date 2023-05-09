@@ -1,7 +1,7 @@
 [alias]
     ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
 [core]
-	editor = vi
+	editor = vim
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
 	autocrlf = input
