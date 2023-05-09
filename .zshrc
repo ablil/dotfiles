@@ -30,6 +30,7 @@ plugins=(git gitignore docker docker-compose one-character)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_functions
+source $HOME/.aliases_private
 
 # User configuration
 
@@ -60,3 +61,8 @@ alias yt=yt-dlp
 alias igrep='grep -i'
 alias esed'sed -E'
 alias clip="xclip -selection clipboard"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
