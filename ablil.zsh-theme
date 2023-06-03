@@ -12,4 +12,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[orange]%} ✱"
 
 return_status="%(?.✔.%{$fg[red]%}✘%f)"
 
+RPROMPT='[%D{%L:%M:%S %p}]'
+
 PS1='%F{166}%~ %F{106}$(git_current_branch)$(git_prompt_status) %{$reset_color%} ${NEWLINE}${return_status} '
