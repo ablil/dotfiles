@@ -14,6 +14,10 @@ set mouse=a
 
 colorscheme default
 
+" Enable syntax highlighting
+filetype plugin on
+syntax on
+
 
 " STOP USING THE FUCKING ARROW KEYS
 noremap <Up> <Nop>
