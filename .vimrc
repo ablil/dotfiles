@@ -28,8 +28,10 @@ let &t_EI = "\e[2 q"
 
 
 " PLUGINS
-call plug#begin()
-Plug 'udalov/kotlin-vim'
-Plug 'tpope/vim-surround'
-Plug 'maxmellon/vim-jsx-pretty'
-call plug#end()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'udalov/kotlin-vim'
+Plugin 'tpope/vim-surround'
+Plugin 'maxmellon/vim-jsx-pretty'
+call vundle#end()

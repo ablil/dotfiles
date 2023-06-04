@@ -18,6 +18,11 @@ if [[ ! -d $HOME/.oh-my-zsh/custom/plugins/one-character ]]; then
 	git clone https://github.com/ablil/one-character.git $HOME/.oh-my-zsh/custom/plugins/one-character
 fi
 
+# Install Vundle (vim plugin manager)
+if [[ ! -d $HOME/.vim/bundle/Vundle.vim ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 # setup custom shell commands
 find $DOTFILES/scripts/bin/ -type f -executable -exec ln -sf {} $HOME/.local/bin/ \;
 
