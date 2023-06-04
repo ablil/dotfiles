@@ -38,6 +38,10 @@ git clone https://github.com/ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom
 # change default shell
 chsh -s $(which zsh)
 
+# install custom zsh theme
+curl https://raw.githubusercontent.com/ablil/less-noise/main/less-noise.zsh-theme -o $HOME/.oh-my-zsh/custom/themes/less-noise.z
+sh-theme
+
 # DONT FORGET TO
 echo "Do NOT forget to:"
 echo "pip3 install -r $DOTFILES/scripts/bin/requirements.txt"
