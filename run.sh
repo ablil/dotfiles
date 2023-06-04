@@ -26,6 +26,14 @@ fi
 # setup custom shell commands
 find $DOTFILES/scripts/bin/ -type f -executable -exec ln -sf {} $HOME/.local/bin/ \;
 
+# add custom zsh plugins/themes
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+git clone https://github.com/ablil/one-character ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/one-character
+
+git clone https://github.com/ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/ablil
 
 # DONT FORGET TO
 echo "Do NOT forget to:"
