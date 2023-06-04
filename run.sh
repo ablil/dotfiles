@@ -35,6 +35,9 @@ git clone https://github.com/ablil/one-character ${ZSH_CUSTOM:-~/.oh-my-zsh/cust
 
 git clone https://github.com/ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/ablil
 
+# change default shell
+chsh -s $(which zsh)
+
 # DONT FORGET TO
 echo "Do NOT forget to:"
 echo "pip3 install -r $DOTFILES/scripts/bin/requirements.txt"
