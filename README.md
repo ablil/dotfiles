@@ -4,9 +4,10 @@ My collection of dotfiles, config, snippets ...
 ## Pre-requisites
 Make sure the following packages are installed
 * zsh
-* oh-my-zsh
 * curl
 * git
+* vim
+* tmux
 
 ## Usage
 
