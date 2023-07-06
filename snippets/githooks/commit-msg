@@ -2,7 +2,7 @@
 # append ticket number to commit message, extract it from the branch name RKS-1234-branch-name
 
 branch_name=$(git rev-parse --abbrev-ref HEAD)
-pattern="^RKS-[[:digit:]]{2,}-"
+pattern="^RKS-[[:digit:]]{2,}"
 
 # Check if the branch name matches the pattern
 if [[ $branch_name =~ $pattern ]]; then
