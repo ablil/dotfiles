@@ -1,0 +1,10 @@
+#!/bin/bash
+# prevent commiting to main branch
+
+current_branch=$(git branch --show-current)
+if [[ $current_branch == 'main' || $current_branch == 'master' ]]; then
+    echo 'YOU ARE ON THE MAIN BRANCH, add --no-verify flag to ignore'
+    exit 1;
+ fi
+
+ exit 0
