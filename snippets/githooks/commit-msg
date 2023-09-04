@@ -1,18 +1,18 @@
 #!/bin/bash
-# append ticket number to commit message, extract it from the branch name RKS-1234-branch-name
+# append ticket number to commit message, extract it from the branch name SHOP-1234-branch-name
 
 branch_name=$(git rev-parse --abbrev-ref HEAD)
-pattern="^RKS-[[:digit:]]{2,}"
+pattern="^SHOP-[[:digit:]]{2,}"
 
 # Check if the branch name matches the pattern
 if [[ $branch_name =~ $pattern ]]; then
-  ticket_number=${branch_name:4:4}
+  ticket_number=${branch_name:5:5}
   commit_message=$(cat "$1")
 
   # Append ticket number only if its not already there (eg: git commit --amend)
-  pattern="^RKS-[[:digit:]]*"
+  pattern="^SHOP-[[:digit:]]*"
   if ! [[ $commit_message =~ $pattern ]]; then
-      echo "RKS-$ticket_number: $commit_message" > "$1"
+      echo "SHOP-$ticket_number: $commit_message" > "$1"
   fi
 fi
 
