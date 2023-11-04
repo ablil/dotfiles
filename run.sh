@@ -39,8 +39,7 @@ git clone https://github.com/ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom
 chsh -s $(which zsh)
 
 # install custom zsh theme
-curl https://raw.githubusercontent.com/ablil/less-noise/main/less-noise.zsh-theme -o $HOME/.oh-my-zsh/custom/themes/less-noise.z
-sh-theme
+curl https://raw.githubusercontent.com/ablil/less-noise/main/less-noise.zsh-theme -o $HOME/.oh-my-zsh/custom/themes/less-noise.zsh-theme
 
 # DONT FORGET TO
 echo "Do NOT forget to:"
