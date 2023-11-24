@@ -5,6 +5,9 @@ if [[ -z $DOTFILES ]]; then
 	exit 1
 fi
 
+# Install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 ln -sf $DOTFILES/.zshrc $HOME/.zshrc
 ln -sf $DOTFILES/.zsh_functions $HOME/.zsh_functions
 ln -sf $DOTFILES/.gitconfig $HOME/.gitconfig
@@ -31,9 +34,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-git clone https://github.com/ablil/one-character ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/one-character
+git clone git@github.com:ablil/one-character ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/one-character
 
-git clone https://github.com/ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/ablil
+git clone git@github.com:ablil/ablil-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/ablil
 
 # change default shell
 chsh -s $(which zsh)
