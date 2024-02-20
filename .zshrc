@@ -32,7 +32,7 @@ source $HOME/.zsh_functions
 # User configuration
 
 export EDITOR='vim'
-export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin\/java//')"
+export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin.*//')"
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -66,6 +66,9 @@ alias yt=yt-dlp
 alias igrep='grep -i'
 alias esed'sed -E'
 alias clip="xclip -selection clipboard"
+alias gcp="gcloud"
+alias tf="terraform"
+alias gdl='./gradlew'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
