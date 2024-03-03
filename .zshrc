@@ -66,6 +66,7 @@ alias yt=yt-dlp
 alias igrep='grep -i'
 alias esed'sed -E'
 alias clip="xclip -selection clipboard"
+alias gdl="./gradlew"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
