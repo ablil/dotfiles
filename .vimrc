@@ -38,4 +38,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'udalov/kotlin-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()
+
+map t <Plug>(easymotion-bd-w)
