@@ -68,7 +68,7 @@ alias esed'sed -E'
 alias clip="xclip -selection clipboard"
 alias gcp="gcloud"
 alias tf="terraform"
-alias gdl='./gradlew'
+alias gdl="./gradlew"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
