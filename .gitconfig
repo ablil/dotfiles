@@ -15,3 +15,4 @@
 	name = ablil
 [init]
 	defaultBranch = main
+	templateDir = ~/.git-templates
