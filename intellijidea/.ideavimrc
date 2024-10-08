@@ -22,6 +22,13 @@ map <leader>s <Action>(FileStructurePopup)
 map <leader>d <Action>(Debug)
 map <leader>b <Action>(ToggleLineBreakpoint)
 
+" conte
+map <leader>n <Action>(GotoClass)
+map <leader>f <Action>(GotoFile)
+map <leader>a <Action>(GotoAction)
+map <leader>e <Action>(RecentFiles)
+map <leader>z <Action>(ActivateTerminalToolWindow)
+
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 set ideajoin
