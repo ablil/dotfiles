@@ -23,7 +23,7 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gitignore docker docker-compose one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_functions
@@ -32,7 +32,6 @@ source $HOME/.zsh_functions
 # User configuration
 
 export EDITOR='vim'
-export JAVA_HOME="$(readlink -f $(which java) | sed 's/\/bin.*//')"
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -55,7 +54,7 @@ alias dt="cd ~/Desktop"
 alias l="ls -l -a"
 alias la="ls -a"
 alias ll="ls -l"
-alias dc=docker-compose
+alias dc="docker compose"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias gclnf="git clean -fd"
