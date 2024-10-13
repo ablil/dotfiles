@@ -69,13 +69,18 @@ alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
 
+# macos specific aliases
+if [[ $OSTYPE == 'darwin'* ]]; then
+    alias clip='pbcopy'
+fi
+
 # nvm
-export NVM_DIR="$HOME/.nvm"
+if [[ $OSTYPE == 'darwin'* ]]; then
+    export NVM_DIR="$HOME/.nvm"
+else
+    export NVM_dir="/opt/homebrew/opt/nvm"
+fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export FZF_DEFAULT_OPTS="--height=40% --layout=reverse --info=inline --border --margin=1 --padding=1"
