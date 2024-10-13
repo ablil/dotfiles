@@ -26,8 +26,9 @@ map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>n <Action>(GotoClass)
 map <leader>f <Action>(GotoFile)
 map <leader>a <Action>(GotoAction)
-map <leader>e <Action>(RecentFiles)
-map <leader>z <Action>(ActivateTerminalToolWindow)
+map <leader>x <Action>(GotoSymbol)
+map <leader>e <Action>(RecentFile)
+map <leader>\ <Action>(ActivateTerminalToolWindow)
 
 
 " Find more examples here: https://jb.gg/share-ideavimrc
