@@ -9,6 +9,8 @@ Make sure the following packages are installed
 * vim
 * tmux
 
+**also make sure you have run `backup.sh` on your old env**
+
 ## Usage
 
 1. clone the repo
