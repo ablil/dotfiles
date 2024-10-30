@@ -27,7 +27,7 @@ map <leader>n <Action>(GotoClass)
 map <leader>f <Action>(GotoFile)
 map <leader>a <Action>(GotoAction)
 map <leader>x <Action>(GotoSymbol)
-map <leader>e <Action>(RecentFile)
+map <leader>e <Action>(RecentFiles)
 map <leader>\ <Action>(ActivateTerminalToolWindow)
 
 

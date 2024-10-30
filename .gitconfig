@@ -11,7 +11,7 @@
   # show most recentely changed branches first
   sort = -committerdate
 [user]
-	email = ablil@protonmail.com
+	email = ablil@proton.me
 	name = ablil
 [init]
 	defaultBranch = main

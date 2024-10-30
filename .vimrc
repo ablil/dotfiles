@@ -9,7 +9,7 @@ set showcmd
 set shiftwidth=4
 set tabstop=4
 set modelines=0     " turned off for security reasons
-set clipboard=unnamedplus
+set clipboard=unnamed
 set mouse=a
 
 colorscheme default
