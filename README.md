@@ -9,25 +9,7 @@ Make sure the following packages are installed
 * vim
 * tmux
 
-**also make sure you have run `backup.sh` on your old env**
-
-## Usage
-
-1. clone the repo
-```sh
-git clone https://github.com/ablil/dotfiles $HOME/.dotfiles
-```
-2. Set env variable
-```sh
-export DOTFILES=$HOME/.dotfiles
-```
-
-3. Run 
-```sh
-bash $DOTFILES/run.sh
-```
-
-## Manual config
+## Terminal
 
 Terminal color scheme
 
