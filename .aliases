@@ -1,0 +1,22 @@
+#!/bin/sh
+
+alias doc="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias l="ls -l -a"
+alias la="ls -a"
+alias ll="ls -l"
+alias dc="docker compose"
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias gclnf="git clean -fd"
+alias gclnb="git branch -l | grep -vE 'master|main|dev|develop' | xargs git branch -D"
+alias rmr="rm -r"
+alias o=xdg-open
+alias yt=yt-dlp
+alias igrep='grep -i'
+alias esed'sed -E'
+alias clip="xclip -selection clipboard"
+alias gcp="gcloud"
+alias tf="terraform"
+alias gdl="./gradlew"
