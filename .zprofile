@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH
 export EDITOR='vim'
 
 export NVM_DIR="$HOME/.nvm"

@@ -1,11 +1,12 @@
 #!/bin/zsh
+
+# zsh
 ZSH_THEME="less-noise"
-
 export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 zstyle ':omz:update' frequency 13 # auto update zsh every 13 days
-
 plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+
+source $ZSH/oh-my-zsh.sh
 
 # nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
