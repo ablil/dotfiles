@@ -20,5 +20,10 @@ function mkgit() {
 
 # example: commit just type your commit message directly in the terminal
 function cm() {
-  git commit -m "$*"
+    if [[ -z "$*" ]]; then
+        python $HOME/.dotfiles/git/commit.py
+    else
+      git commit -m "$*"
+    fi
 }
+
