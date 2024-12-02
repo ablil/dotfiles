@@ -4,6 +4,8 @@
 import subprocess
 import sys
 import os
+from dis import code_info
+
 import google.generativeai as genai
 import tempfile
 
@@ -60,13 +62,13 @@ def commit(msg: str):
 
 def __prompt_user():
     message = generate_commit_message(git_diff())
-    choice = input(f"""{message}\n\nDo you want to commit with this message [y/n/r(retry)]: """)
-    if choice.lower() == 'y':
+    choice = input(f"""{message}\n\nDo you want to commit with this message [y/n/r(retry)]: """).lower().strip()
+    if choice == 'y' or not len(choice):
         commit(message)
-    elif choice.lower() == 'n':
+    elif choice == 'n':
         msg = input("Type your new message: ")
         commit(msg)
-    elif choice.lower() == 'retry' or choice.lower() == 'r':
+    elif choice == 'retry' or choice == 'r':
         __prompt_user()
     else:
         print("Invalid option, aborting.")
