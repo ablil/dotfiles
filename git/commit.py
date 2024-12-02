@@ -58,18 +58,19 @@ def commit(msg: str):
         print(f"Error committing changes: {e.stderr}")
         sys.exit(1)
 
-
-if __name__ == '__main__':
-    # Generate commit message based on staged git diff
+def __prompt_user():
     message = generate_commit_message(git_diff())
-
-    # Show the commit message to the user and ask for confirmation
-    choice = input(f"""{message}\n\nDo you want to commit with this message [y/N]: """)
+    choice = input(f"""{message}\n\nDo you want to commit with this message [y/n/r(retry)]: """)
     if choice.lower() == 'y':
         commit(message)
     elif choice.lower() == 'n':
         msg = input("Type your new message: ")
         commit(msg)
+    elif choice.lower() == 'retry' or choice.lower() == 'r':
+        __prompt_user()
     else:
         print("Invalid option, aborting.")
         sys.exit(0)
+
+if __name__ == '__main__':
+    __prompt_user()
