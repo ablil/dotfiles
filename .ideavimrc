@@ -6,6 +6,8 @@ set surround
 
 " PLugins
 Plug 'machakann/vim-highlightedyank'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t

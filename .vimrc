@@ -12,7 +12,7 @@ set modelines=0     " turned off for security reasons
 set clipboard=unnamed
 set mouse=a
 
-colorscheme default
+colorscheme sorbet
 
 " Enable syntax highlighting
 filetype plugin on
@@ -39,6 +39,8 @@ Plugin 'udalov/kotlin-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
 map t <Plug>(easymotion-bd-w)

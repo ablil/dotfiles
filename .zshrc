@@ -21,3 +21,5 @@ for file in $HOME/.{exports,functions,aliases}; do
     [ -f "$file" ] && source "$file"
 done
 unset file
+
+source <(fzf --zsh)
