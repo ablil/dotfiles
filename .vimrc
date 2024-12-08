@@ -6,6 +6,7 @@ set hlsearch
 set smartindent
 set showcmd
 set hidden
+set cursorline
 
 set shiftwidth=4
 set tabstop=4
@@ -50,3 +51,5 @@ map t <Plug>(easymotion-bd-w)
 
 " some remaps
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>x :xa<CR>
+
