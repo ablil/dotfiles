@@ -64,3 +64,8 @@ function gshf() {
                 {}
 FZF-EOF"
 }
+
+# vid - open all files inside directory
+function vid() {
+    vim $(git ls-files && git ls-files --others --exclude-standard)
+}

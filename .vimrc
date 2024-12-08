@@ -5,6 +5,7 @@ set incsearch
 set hlsearch
 set smartindent
 set showcmd
+set hidden
 
 set shiftwidth=4
 set tabstop=4
@@ -41,6 +42,11 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 map t <Plug>(easymotion-bd-w)
+
+" some remaps
+nnoremap <Leader>b :Buffers<CR>
