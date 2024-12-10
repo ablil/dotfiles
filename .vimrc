@@ -52,4 +52,5 @@ map t <Plug>(easymotion-bd-w)
 " some remaps
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>x :xa<CR>
+nnoremap <Leader>q :qa<CR>
 
