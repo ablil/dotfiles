@@ -4,13 +4,13 @@
 import subprocess
 import sys
 import os
-from dis import code_info
-import dataclasses
 import functools
 import argparse
+import utils
 
 import google.generativeai as genai
-import tempfile
+
+logger = utils.create_logger(__name__)
 
 __prompt = """
 Act as a senior software engineer, and you are tasked to review pull request from one of your peer, given only the Git diff.
@@ -88,18 +88,18 @@ def press_any_key_to_continue():
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 def review(filename: str, diff: str, interactive_mode = False):
-    print(f"reviewing {filename} ...")
+    logger.info(f"reviewing {filename} ...")
     review_file = os.path.join('.review', filename.split('/')[-1])
     try:
         response = get_model().generate_content(f"{__prompt}\n\n{diff}")
         if interactive_mode:
-            print(f"\n\n{response.text}\n\n")
+            logger.highlight(f"\n\n{response.text}\n\n")
             press_any_key_to_continue()
         else:
             with open(review_file, 'w') as fd:
                 fd.write(response.text)
     except Exception as e:
-        print(f"failed to review {filename}, {e}")
+        logger.error(f"failed to review {filename}, {e}")
 
 def cli():
     parser = argparse.ArgumentParser(prog='review', description='Ask Gemini to review pull requests locally', epilog='Before running, make sure you have switch to the branch you want to review')
@@ -111,7 +111,7 @@ def cli():
 
 def main():
     args = cli()
-    print(args)
+    logger.debug(args)
     HEAD = args.branch
     main = args.master
     files =  args.file
@@ -120,7 +120,7 @@ def main():
     os.makedirs('.review', exist_ok=True)
 
     changed_files = get_all_changed_files(HEAD, main, files)
-    print(f"total file to review {len(changed_files)}")
+    logger.info(f"total file to review {len(changed_files)}")
     for file in changed_files:
         diff = git_diff(file, HEAD, main)
         review(file, diff, interactive_mode)
