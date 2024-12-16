@@ -1,5 +1,6 @@
 [alias]
     ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
+    override = !git add -u && git commit --amend --no-edit && git push origin $(git branch --show-current) -f
 [core]
 	editor = vim
   excludesfile = ~/.gitignore
