@@ -4,10 +4,12 @@
 import subprocess
 import sys
 import os
-from dis import code_info
+import utils
 
 import google.generativeai as genai
 import tempfile
+
+logger = utils.create_logger(__name__)
 
 __prompt = """
 Generate a concise and meaningful commit message based on the following git diff.
@@ -26,7 +28,7 @@ def git_diff() -> str:
         )
         return result.stdout
     except subprocess.CalledProcessError as e:
-        print(f"Error getting git diff: {e.stderr}")
+        logger.error(f"Error getting git diff: {e.stderr}")
         sys.exit(1)
 
 
@@ -37,7 +39,7 @@ def __configure_credentials(api_key: str = os.environ.get('GEMINI_API_KEY')):
 
 def generate_commit_message(diff: str) -> str:
     if not diff or not len(diff.strip()):
-        print("make sure to add your files to staging area")
+        logger.error("make sure to add your files to staging area")
         sys.exit()
     __configure_credentials()
     model = genai.GenerativeModel("gemini-1.5-flash")
@@ -56,15 +58,16 @@ def commit(msg: str):
             text=True,
             check=True
         )
-        print(result.stdout)  # Output commit result
+        logger.info(result.stdout)  # Output commit result
         os.remove(commit_message_file)  # Clean up the temporary file
     except subprocess.CalledProcessError as e:
-        print(f"Error committing changes: {e.stderr}")
+        logger.error(f"Error committing changes: {e.stderr}")
         sys.exit(1)
 
 def __prompt_user():
     message = generate_commit_message(git_diff())
-    choice = input(f"""{message}\n\nDo you want to commit with this message [y/n/r(retry)]: """).lower().strip()
+    logger.highlight(message)
+    choice = input(f"""n\nDo you want to commit with this message [y/n/r(retry)]: """).lower().strip()
     if choice == 'y' or not len(choice):
         commit(message)
     elif choice == 'n':
@@ -73,7 +76,7 @@ def __prompt_user():
     elif choice == 'retry' or choice == 'r':
         __prompt_user()
     else:
-        print("Invalid option, aborting.")
+        logger.error("Invalid option, aborting.")
         sys.exit(0)
 
 if __name__ == '__main__':
