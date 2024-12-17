@@ -36,7 +36,9 @@ def __configure_credentials(api_key: str = os.environ.get('GEMINI_API_KEY')):
     genai.configure(api_key=api_key)
 
 def generate_commit_message(diff: str) -> str:
-    assert diff and len(diff.strip()), 'No git diff is provided'
+    if not diff or not len(diff.strip()):
+        print("make sure to add your files to staging area")
+        sys.exit()
     __configure_credentials()
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(f"{__prompt}\n\n{diff}")
