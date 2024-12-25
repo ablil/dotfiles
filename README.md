@@ -18,3 +18,7 @@ Terminal color scheme
 | Background color | 1E1E1E       |
 | Text color       | D3D7CF       |
 | Font             | Monospace 12 |
+
+## Disclaimer
+
+These are my personal dotfiles and they may or may not work on your end so keep that in mind.
