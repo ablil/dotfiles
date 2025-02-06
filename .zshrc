@@ -4,7 +4,7 @@
 ZSH_THEME="less-noise"
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' frequency 13 # auto update zsh every 13 days
-plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages terraform)
 
 source $ZSH/oh-my-zsh.sh
 
