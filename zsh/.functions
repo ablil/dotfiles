@@ -21,14 +21,14 @@ function mkgit() {
 # example: commit just type your commit message directly in the terminal
 function cm() {
     if [[ -z "$*" ]]; then
-        python $HOME/.dotfiles/git/commit.py
+        python $HOME/.dotfiles/git/utils/commit.py
     else
       git commit -m "$*"
     fi
 }
 
 function review() {
-    python $HOME/.dotfiles/git/review.py $*
+    python $HOME/.dotfiles/git/utils/review.py $*
 }
 
 # vi - vi a file, including hidden directories
