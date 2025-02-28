@@ -84,3 +84,8 @@ function wipe() {
         fi
     done
 }
+
+# open a directory under $HOME/repos
+function repo() {
+    cd $HOME/repos/$(fzf < <(ls $HOME/repos))
+}
