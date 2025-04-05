@@ -1,21 +1,27 @@
-set nocompatible
+set nocompatible " no need to make vim VI-compatible
 set rnu nu
-set expandtab
-set incsearch
-set hlsearch
-set smartindent
-set showcmd
-set hidden
-set cursorline
-set colorcolumn=100
+set showcmd     " show my keystrokes at the bottom right
+set hidden      " allow me to open new buffer without writing to the previous  one
+set mouse=a     " allow mouse scrolling
 
+" Indention
+set expandtab	" use spaces instead of tab
+set smartindent " automatically indent next line accordingly
+set autoindent
 set shiftwidth=4
 set tabstop=4
-set modelines=0     " turned off for security reasons
-set clipboard=unnamed
-set mouse=a
 
+
+" searching
+set incsearch   " highlight next search match
+set hlsearch   " hightlight all search matches
+
+
+" theming
 colorscheme sorbet
+set cursorline " hightlight current line
+set colorcolumn=100
+
 
 " Enable syntax highlighting
 filetype plugin on
