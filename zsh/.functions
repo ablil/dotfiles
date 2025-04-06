@@ -19,10 +19,8 @@ function mkgit() {
 
 
 # example: commit just type your commit message directly in the terminal
-function cm() {
-    if [[ -z "$*" ]]; then
-        python $HOME/.dotfiles/git/utils/commit.py
-    fi
+function commit() {
+    python $HOME/.dotfiles/git/utils/commit.py
 }
 
 function review() {
