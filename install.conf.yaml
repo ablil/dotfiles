@@ -1,0 +1,28 @@
+# install dotbot: pip install dotbot
+# run it: cd $HOME/.dotfiles && dotbot -c install.conf.yaml
+
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- create:
+  - ~/.ssh/
+  - ~/repos
+  - ~/.config/gh
+  - ~/.git-templates/hooks
+
+- link:
+    ~/.vimrc: .vimrc
+    ~/.tmux.conf: .tmux.conf
+
+    ~/.zshrc: zsh/.zshrc
+    ~/.zprofile: zsh/.zprofile
+    ~/.aliases: zsh/.aliases
+    ~/.functions: zsh/.functions
+
+    ~/.gitconfig: git/.gitconfig
+    ~/.git-templates/hooks:
+      glob: true
+      path: git/hooks/*

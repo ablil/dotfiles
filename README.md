@@ -3,23 +3,28 @@ My collection of dotfiles, config, snippets ...
 
 ## Get started
 
-### basic tools
+1. Install some pre-requesites:
 
-1. setup basic tools
 ```shell
 # Debian based
-sudo apt install --yes zsh curl git vim tmux
+sudo apt install --yes zsh curl git vim tmux pip
 ```
-2. link dotfiles (tmux, vimrc ...)
 
-### zsh
-1. Install zsh
-2. setup [oh-my-zsh](https://ohmyz.sh/)
+2. Clone repo
 
-### vim
-1. install vim
-2. link dotfiles (.vimrc)
-3. install plugins
+`git clone https://github.com/ablil/dotfiles $HOME/.dotfiles`
+
+
+3. run dotbot
+```shell
+pip install dotbot
+cd $HOME/.dotfiles
+dotbot -c install.conf.yaml
+```
+
+4. run install.sh for some extra setup
+
+## Manualy setup
    
 ### Java dev environment
 1. Install Java
