@@ -1,6 +1,7 @@
-shortcut: autowire
-description: Autowire dependency
+shortcut: test
+description: Unit test fn
 target: kotlin
 ---
-@org.springframework.beans.factory.annotation.Autowired
-lateinit var
+@org.junit.jupiter.api.Test
+fun `should $testsomething$`() {
+}
