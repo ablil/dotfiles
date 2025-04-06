@@ -5,7 +5,7 @@
     link:
       relink: true
       create: true  # create parent directory if necessary
-      force: true   # force if targe link already exists
+      #force: true   # force if targe link already exists
 
 - clean: ['~']
 
@@ -13,6 +13,7 @@
   - ~/.ssh/
   - ~/repos
   - ~/.config/gh
+  - ~/.gradle
   - ~/.git-templates/hooks
   - ~/Library/Application Support/Code/User # macos
 
@@ -33,3 +34,6 @@
     ~/.git-templates/hooks:
       glob: true
       path: git/hooks/*
+
+    ~/.gradle/init.gradle: gradle/init.gradle
+    ~/.gradle/gradle.properties: gradle/gradle.properties

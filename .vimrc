@@ -107,7 +107,7 @@ if has('ide')
     map <leader>s <Action>(FileStructurePopup)
     map <leader>d <Action>(Debug)
     map <leader>b <Action>(ToggleLineBreakpoint)
-    map <leader>\ <Action>(ActivateTerminalToolWindow)
+    map <leader>o <Action>(ActivateTerminalToolWindow)
 
     " PLugins
     Plug 'machakann/vim-highlightedyank'
@@ -123,7 +123,9 @@ if has('ide')
     set nerdtree    " navigate file explorer with hjkl
     set easymotion
     set which-key   " requires which-key idea plugin
-
+else
+    " run the current file, expect shebang on top
+    nnoremap <Leader>x   :!./%
 endif
 
 " Remove trailing empty lines on save

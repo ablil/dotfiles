@@ -22,8 +22,6 @@ function mkgit() {
 function cm() {
     if [[ -z "$*" ]]; then
         python $HOME/.dotfiles/git/utils/commit.py
-    else
-      git commit -m "$*"
     fi
 }
 

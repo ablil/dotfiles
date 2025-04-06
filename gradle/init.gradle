@@ -1,0 +1,25 @@
+allprojects {
+    afterEvaluate { project ->
+        def isSpringBootProject = project.plugins.hasPlugin('org.springframework.boot')
+        def isJavaPluginApplied = project.plugins.hasPlugin('java')
+
+        if (isSpringBootProject || isJavaPluginApplied) {
+            project.bootRun {
+                systemProperty 'hibernate.generate_statistics', 'false'
+                systemProperty 'hibernate.show_sql', 'true'
+                systemProperty 'hibernate.format_sql', 'true'
+
+                // jvmArgs += '-Dspring.jpa.show-sql=true'
+                jvmArgs += '-Dlogging.level.net.payback=debug'
+                jvmArgs += '-Dlogging.level.com.ablil=debug'
+                jvmArgs += '-Dlogging.level.org.example=debug'
+                jvmArgs += '-Dlogging.level.org.hibernate.orm.jdbc.bind=info' // set to trace to display SQL query params
+            }
+
+            // For plain Java applications
+            project.tasks.withType(JavaExec) {
+                // systemProperty 'hibernate.generate_statistics', 'true'
+            }
+        }
+    }
+}
