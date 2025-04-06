@@ -1,0 +1,11 @@
+shortcut: h2
+description: h2 datbaase config
+target: other
+---
+spring:
+  datasource:
+    username: test-dbadmin
+    password:
+    url: jdbc:h2:mem:mytestdb
+  jpa:
+    show-sql: true

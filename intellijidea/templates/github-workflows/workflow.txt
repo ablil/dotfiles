@@ -1,0 +1,26 @@
+target: other
+shortcut: workflow
+description: Github workflow
+---
+name: ci
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: read
+    packages: write
+
+defaults:
+    run:
+        shell: bash
+
+jobs:
+    default:
+        run-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: echo hello world

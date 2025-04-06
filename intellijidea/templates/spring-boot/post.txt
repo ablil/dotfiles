@@ -1,0 +1,11 @@
+target: kotlin
+shortcut: post
+description: MockMvc POST test
+---
+mockMvc
+    .post("$ENDPOINT$") {
+        contentType = org.springframework.http.MediaType.APPLICATION_JSON
+        content =
+            objectMapper.writeValueAsString($JSON$)
+    }
+    .andExpect { status { isOk() } }

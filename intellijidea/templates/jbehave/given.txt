@@ -1,0 +1,7 @@
+shortcut: given
+description: Jbehave Given function
+target: kotlin
+---
+@org.jbehave.core.annotations.Given("$GIVEN$")
+fun `$GIVEN$`() {
+}

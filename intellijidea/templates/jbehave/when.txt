@@ -1,0 +1,7 @@
+shortcut: when
+description: Jbehave When function
+target: kotlin
+---
+@org.jbehave.core.annotations.When("$WHEN$")
+fun `$WHEN$`() {
+}

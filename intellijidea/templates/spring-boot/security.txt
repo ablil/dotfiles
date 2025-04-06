@@ -1,0 +1,11 @@
+shortcut: postgres
+description: Postgres JPA configuration
+target: other
+---
+spring:
+  datasource:
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:supersecurepassword}
+    url: jdbc:postgresql://0.0.0.0:${POSTGRES_PORT:5432}/${POSTGRES_DB:mydb}
+  jpa:
+    generate-ddl: true

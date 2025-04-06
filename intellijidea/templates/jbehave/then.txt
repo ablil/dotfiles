@@ -1,0 +1,7 @@
+shortcut: then
+description: Jbehave Then function
+target: kotlin
+---
+@org.jbehave.core.annttations.Then("$THEN$")
+fun `$THEN$`() {
+}
