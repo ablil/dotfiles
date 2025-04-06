@@ -16,8 +16,6 @@ set tabstop=4
 " searching
 set incsearch   " highlight next search match
 set hlsearch    " hightlight all search matches
-set ignorecase  " ignore case while searching
-set smartcase   " override rule above, do case-senstive search when upper-case letter typed
 
 
 " theming
@@ -64,8 +62,12 @@ nnoremap <Leader>w :wa<CR>
 
 
 " Bottom status line
+function! BufferCount()
+    return bufnr('$')
+endfunction
+
 set laststatus=2
-set statusline=file:\ %f%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ buff:\ %n
+set statusline=file:\ %f%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ buff:\ %n/%{BufferCount()}
 set statusline +=%=%c:%l/%L\ %m%r%y
 
 set so=7    " set 7 lines from the cursor while moving vertically
