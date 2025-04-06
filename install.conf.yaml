@@ -4,6 +4,8 @@
 - defaults:
     link:
       relink: true
+      create: true  # create parent directory if necessary
+      force: true   # force if targe link already exists
 
 - clean: ['~']
 
@@ -12,6 +14,7 @@
   - ~/repos
   - ~/.config/gh
   - ~/.git-templates/hooks
+  - ~/Library/Application Support/Code/User # macos
 
 - link:
     ~/.vimrc: .vimrc
@@ -21,6 +24,10 @@
     ~/.zprofile: zsh/.zprofile
     ~/.aliases: zsh/.aliases
     ~/.functions: zsh/.functions
+
+    ~/Library/Application Support/Code/User:
+      glob: true
+      path: Code/*
 
     ~/.gitconfig: git/.gitconfig
     ~/.git-templates/hooks:

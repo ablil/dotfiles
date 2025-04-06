@@ -1,0 +1,55 @@
+{
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.preferences": {},
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.useInlineCompletions": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "editor.lineNumbers": "relative",
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "telemetry.telemetryLevel": "off",
+    "editor.scrollBeyondLastLine": false,
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "keyboard.dispatch": "keyCode",
+    "window.titleBarStyle": "custom",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.inlineSuggest.enabled": true,
+    "files.simpleDialog.enable": true,
+    "workbench.tree.indent": 20,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.codeActionsOnSave.mode": "problems",
+    "editor.formatOnSaveMode": "modifications",
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 11,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
+}
