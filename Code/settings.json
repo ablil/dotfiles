@@ -41,7 +41,6 @@
     "eslint.codeActionsOnSave.mode": "problems",
     "editor.formatOnSaveMode": "modifications",
     "editor.linkedEditing": true,
-    "editor.minimap.enabled": false,
     "[snippets]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },

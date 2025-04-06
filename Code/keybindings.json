@@ -27,26 +27,6 @@
     "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
   },
   {
-    "key": "] e",
-    "command": "editor.action.marker.nextInFiles",
-    "when": "editorFocus"
-  },
-  {
-    "key": "f8",
-    "command": "-editor.action.marker.nextInFiles",
-    "when": "editorFocus"
-  },
-  {
-    "key": "[ e",
-    "command": "editor.action.marker.prevInFiles",
-    "when": "editorFocus"
-  },
-  {
-    "key": "shift+f8",
-    "command": "-editor.action.marker.prevInFiles",
-    "when": "editorFocus"
-  },
-  {
     "key": "\\ a",
     "command": "workbench.action.showCommands"
   },
