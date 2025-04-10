@@ -50,8 +50,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'rose-pine/vim'
 call vundle#end()
 
+colorscheme rosepine_dawn
 map t <Plug>(easymotion-bd-w)
 
 " Remaps for buffers
