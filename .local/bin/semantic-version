@@ -1,0 +1,35 @@
+#!/bin/bash
+# description: Parse Git commit history and figure out the semantic version
+
+
+set -e
+major=0
+minor=0
+patch=
+
+# get latest tag from history
+latest_tag=$(git tag --list --sort=-v:refname "*.*.*" | head -n 1)
+initial_commit=$(git rev-list --max-parents=0 HEAD)
+[[ -n $latest_tag ]] && initial_commit=$latest_tag
+[[ -z $latest_tag ]] && latest_tag=0.0.0
+IFS='.' read -r major minor patch <<< "$latest_tag"
+
+# parse Git commit history
+while read -r line; do
+    if [[ "$line" =~ ^fix.*$ ]]; then
+       patch=$((patch + 1))
+    fi
+
+    if [[ "$line" =~ ^feat.*$ ]]; then
+       minor=$((minor + 1))
+       patch=0
+    fi
+
+    if [[ "$line" =~ ^feat.*!:.*$ ]] || [[ "$line" =~ ^fix.*!:.*$ ]]; then
+        major=$((major + 1))
+        minor=0
+        patch=0
+    fi
+done < <(IFS= git log $initial_commit..HEAD --pretty=format:"%s" --reverse)
+
+echo $major.$minor.$patch
