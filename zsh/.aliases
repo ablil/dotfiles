@@ -20,3 +20,9 @@ alias clip="xclip -selection clipboard"
 alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
+alias mkdir="mkdir -p"
+
+# macos specific alises
+if [[ $(uname) == "Darwin" ]]; then
+    alias sed=gsed
+fi
