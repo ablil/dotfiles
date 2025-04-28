@@ -35,7 +35,7 @@
       glob: true
       path: git/hooks/*
 
-    ~/.gradle/init.gradle: gradle/init.gradle
+    ~/.gradle/init.gradle.kts: gradle/init.gradle.kts
     ~/.gradle/gradle.properties: gradle/gradle.properties
 
     ~/.local/bin:
