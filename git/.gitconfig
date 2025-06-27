@@ -3,6 +3,9 @@
     override = !git add -u && git commit --amend --no-edit && git push origin $(git branch --show-current) -f
     edit = !git commit --amend
     empty = !git commit -m 'trigger build' --allow-empty
+    l = log --oneline
+    s = status
+    ss = status --short
 [core]
 	editor = vim
   excludesfile = ~/.gitignore
