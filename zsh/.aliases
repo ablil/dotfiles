@@ -21,6 +21,7 @@ alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
 alias mkdir="mkdir -p"
+alias gstam="git stash push -m"
 
 # macos specific alises
 if [[ $(uname) == "Darwin" ]]; then

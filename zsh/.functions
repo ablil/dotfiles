@@ -24,6 +24,13 @@ function vif() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
+# f - get a file
+function f() {
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && echo "${files[@]}"
+}
+
+
 
 # cd - cd to directory, including hidden directories
 function cdf() {
