@@ -5,18 +5,26 @@ import subprocess
 import sys
 import os
 import utils
-
-import google.generativeai as genai
+from pydantic import BaseModel
+import aiutils
 import tempfile
+import json
+from typing import Optional
 
 logger = utils.create_logger(__name__)
 
 __prompt = """
-Generate a concise and meaningful commit message based on the following git diff.
-Summarize the purpose of the changes in a clear and professional tone, avoiding overly technical details.
-Include context if evident, such as fixing bugs, adding features, improving performance, or refactoring code.
-Here is the diff:
+Given the following code change (Git diff), generate a commit message and a description if necessary.
+The commit message should be simpler, summarized and highlight the main changes, and follow Git conventional commits.
+
+Here is the Git diff:
+
+
 """
+
+class StructuredOutput(BaseModel):
+    commit_msg: str
+    commit_description: Optional[str]
 
 def git_diff() -> str:
     try:
@@ -32,24 +40,13 @@ def git_diff() -> str:
         sys.exit(1)
 
 
-def __configure_credentials(api_key: str = os.environ.get('GEMINI_API_KEY')):
-    if not api_key:
-        raise ValueError("GEMINI_API_KEY environment variable is not set or is empty.")
-    genai.configure(api_key=api_key)
 
-def generate_commit_message(diff: str) -> str:
-    if not diff or not len(diff.strip()):
-        logger.error("make sure to add your files to staging area")
-        sys.exit()
-    __configure_credentials()
-    model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(f"{__prompt}\n\n{diff}")
-    return response.text
-
-def commit(msg: str):
+def commit(msg: StructuredOutput):
     commit_message_file = os.path.join(tempfile.gettempdir(), 'message.txt')
     with open(commit_message_file, 'w') as f:
-        f.write(msg)
+        f.write(msg.commit_msg)
+        f.write("\n\n")
+        f.write(msg.commit_description)
 
     try:
         result = subprocess.run(
@@ -65,8 +62,14 @@ def commit(msg: str):
         sys.exit(1)
 
 def __prompt_user():
-    message = generate_commit_message(git_diff())
-    logger.highlight(message)
+    diff = git_diff()
+    prompt = aiutils.Prompt(
+        prompt=__prompt + diff,
+        response_schema=StructuredOutput
+    )
+    message = aiutils.gemini_chat(prompt)
+    logger.highlight(f"{message.commit_msg}\n\n{message.commit_description}")
+
     choice = input(f"""n\nDo you want to commit with this message [y/n/r(retry)]: """).lower().strip()
     if choice == 'y' or not len(choice):
         commit(message)
