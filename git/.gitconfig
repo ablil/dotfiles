@@ -6,6 +6,7 @@
     l = log --oneline
     s = status
     ss = status --short
+    drop = reset --hard HEAD^
 [core]
 	editor = vim
   excludesfile = ~/.gitignore
