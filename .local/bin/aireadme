@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+# description: Ask Gemini AI to look into your git diff and generate a small description that can 
+# but on README
+
+import subprocess
+import sys
+import os
+import utils
+from pydantic import BaseModel
+import aiutils
+import tempfile
+import json
+from typing import Optional
+
+logger = utils.create_logger(__name__)
+
+__prompt = """
+You are developer, and after finishing some code change, you have to judge if it worths a README
+section, that could include some details or some steps for Get started.
+
+The description or details should be simpler, summarized, or steps if necessary.
+
+Here is the Git diff:
+
+
+"""
+
+class StructuredOutput(BaseModel):
+    commit_msg: str
+    commit_description: Optional[str]
+
+def git_diff() -> str:
+    try:
+        result = subprocess.run(
+            ['git', 'diff', '--staged'],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error getting git diff: {e.stderr}")
+        sys.exit(1)
+
+
+
+def commit(msg: StructuredOutput):
+    commit_message_file = os.path.join(tempfile.gettempdir(), 'message.txt')
+    with open(commit_message_file, 'w') as f:
+        f.write(msg.commit_msg)
+        f.write("\n\n")
+        f.write(msg.commit_description)
+
+    try:
+        result = subprocess.run(
+            ['git', 'commit', '-F', str(commit_message_file)],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        logger.info(result.stdout)  # Output commit result
+        os.remove(commit_message_file)  # Clean up the temporary file
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Error committing changes: {e.stderr}")
+        sys.exit(1)
+
+def __prompt_user():
+    diff = git_diff()
+    prompt = aiutils.Prompt(
+        prompt=__prompt + diff,
+        response_schema=None
+    )
+    message = aiutils.gemini_chat(prompt)
+    logger.highlight(message)
+
+
+if __name__ == '__main__':
+    __prompt_user()

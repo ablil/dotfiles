@@ -29,7 +29,7 @@ def gemini_chat(prompt: Prompt, client = gemini_client()) -> str | BaseModel:
         }
 
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-2.5-pro',
         contents=prompt.prompt,
         config=config
     )

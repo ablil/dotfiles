@@ -20,3 +20,5 @@ target/
 # Custom
 .env
 .exports_private
+.aider*
+.local/bin/.idea/
