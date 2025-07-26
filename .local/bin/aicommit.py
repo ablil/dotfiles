@@ -14,10 +14,10 @@ from typing import Optional
 logger = utils.create_logger(__name__)
 
 __prompt = """
-Given the following code change (Git diff), generate a commit message and a description if necessary.
-The commit message should be simpler, summarized and highlight the main changes, and follow Git conventional commits.
+You are tasked with generating a commit message and a description for the following code changes.
+Keep it short and concise, and follow the conventional commits format.
 
-Here is the Git diff:
+Code changes:
 
 
 """
@@ -25,20 +25,6 @@ Here is the Git diff:
 class StructuredOutput(BaseModel):
     commit_msg: str
     commit_description: Optional[str]
-
-def git_diff() -> str:
-    try:
-        result = subprocess.run(
-            ['git', 'diff', '--staged'],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        return result.stdout
-    except subprocess.CalledProcessError as e:
-        logger.error(f"Error getting git diff: {e.stderr}")
-        sys.exit(1)
-
 
 
 def commit(msg: StructuredOutput):
@@ -61,8 +47,8 @@ def commit(msg: StructuredOutput):
         logger.error(f"Error committing changes: {e.stderr}")
         sys.exit(1)
 
-def __prompt_user():
-    diff = git_diff()
+def prompt_user(staged: bool = True):
+    diff = utils.git_diff(staged)
     prompt = aiutils.Prompt(
         prompt=__prompt + diff,
         response_schema=StructuredOutput
@@ -77,10 +63,10 @@ def __prompt_user():
         msg = input("Type your new message: ")
         commit(msg)
     elif choice == 'retry' or choice == 'r':
-        __prompt_user()
+        prompt_user()
     else:
         logger.error("Invalid option, aborting.")
         sys.exit(0)
 
 if __name__ == '__main__':
-    __prompt_user()
+    prompt_user()

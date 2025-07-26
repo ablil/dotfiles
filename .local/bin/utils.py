@@ -1,4 +1,6 @@
 import logging
+import subprocess
+import sys
 
 # Define the custom log level
 HIGHLIGHT_LEVEL = 25  # Between INFO (20) and WARNING (30)
@@ -48,4 +50,14 @@ def create_logger(name: str) -> logging.Logger :
         logger.addHandler(handler)
 
     return logger
-    
+
+def git_diff(staged: bool = True) -> str:
+    try:
+        args = ['git', 'diff']
+        if staged:
+            args.append('--staged')
+        result = subprocess.run(args, capture_output=True, text=True, check=True)
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        sys.exit(1)
+

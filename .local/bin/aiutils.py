@@ -9,6 +9,15 @@ import utils
 
 logger = utils.create_logger(__name__)
 
+COMMIT_MESSAGE_PROMPT = """
+You are tasked with generating a commit message and a description for the following code changes.
+Keep it short and concise, and follow the conventional commits format.
+
+Code changes:
+
+
+"""
+
 @dataclasses.dataclass
 class Prompt:
     prompt: str
