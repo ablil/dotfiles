@@ -57,7 +57,7 @@ def git_diff(staged: bool = True) -> str:
         if staged:
             args.append('--staged')
         result = subprocess.run(args, capture_output=True, text=True, check=True)
+        print('stdout: ' + result.stdout)
         return result.stdout
     except subprocess.CalledProcessError as e:
         sys.exit(1)
-

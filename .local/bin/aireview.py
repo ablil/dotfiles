@@ -39,6 +39,7 @@ def review_code_change(files, staged: bool = True) -> str:
         logger.info("getting changed files ...")
         code_changes = utils.git_diff(staged)
 
+    logger.info("code changes " + code_changes)
     prompt = aiutils.Prompt(
         prompt=__prompt + code_changes,
         response_schema=None
@@ -56,4 +57,3 @@ if __name__ == '__main__':
         files.extend(sys.argv[1:])
 
     review_code_change(files)
-
