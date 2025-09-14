@@ -13,6 +13,7 @@
   - ~/.ssh/
   - ~/repos
   - ~/.config/gh
+  - ~/.config/spring-boot
   - ~/.gradle
   - ~/.git-templates/hooks
   - ~/Library/Application Support/Code/User # macos
@@ -35,9 +36,9 @@
       glob: true
       path: git/hooks/*
 
-    ~/.gradle/init.gradle.kts: gradle/init.gradle.kts
     ~/.gradle/gradle.properties: gradle/gradle.properties
 
     ~/.local/bin:
       glob: true
       path: .local/bin/*
+    ~/.config/spring-boot/spring-boot-devtools.yaml: ./spring-boot-devtools.yaml
