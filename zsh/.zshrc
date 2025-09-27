@@ -1,10 +1,12 @@
 #!/bin/zsh
 
+bindkey -v # enable vi keybinding in zsh terminal
+
 # zsh
 ZSH_THEME="less-noise"
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' frequency 13 # auto update zsh every 13 days
-plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages terraform)
+plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages terraform zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -32,3 +34,6 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOM/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# vim keybinding
+ZVM_SYSTEM_CLIPBOARD_ENABLED=true # enable system clipboard
