@@ -5,7 +5,7 @@
     link:
       relink: true
       create: true  # create parent directory if necessary
-      #force: true   # force if target link already exists
+      force: true   # force if target link already exists
 
 - clean: ['~']
 
@@ -20,6 +20,7 @@
 
 - link:
     ~/.vimrc: .vimrc
+    ~/.curlrc: .curlrc
     ~/.tmux.conf: .tmux.conf
 
     ~/.zshrc: zsh/.zshrc
