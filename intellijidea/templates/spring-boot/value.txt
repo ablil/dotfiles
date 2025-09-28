@@ -1,6 +1,0 @@
-shortcut: value
-description: Spring property value
-target: kotlin
----
-@org.springframework.beans.factory.annotation.Value("\${$PROPERTY$}")
-lateinit var

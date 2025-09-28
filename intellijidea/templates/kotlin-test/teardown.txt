@@ -1,7 +1,0 @@
-shortcut: teardown
-description: Junit teardown function
-target: kotlin
----
-@org.junit.jupiter.api.AfterEach
-fun teardown() {
-}

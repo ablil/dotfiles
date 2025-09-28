@@ -1,7 +1,0 @@
-shortcut: setup
-description: Junit setup function
-target: kotlin
----
-@org.junit.jupiter.api.BeforeEach
-fun setup() {
-}

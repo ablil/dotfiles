@@ -1,6 +1,0 @@
-shortcut: autowire
-description: Autowire depedency
-target: kotlin
----
-@org.springframework.beans.factory.annotation.Autowired
-lateinit var

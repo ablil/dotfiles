@@ -1,9 +1,0 @@
-target: kotlin
-description: Exception handler method
-shortcut: handler
----
-@org.springframework.web.bind.annotation.ExceptionHandler($IllegalStateException$::class)
-fun handle$IllegalStateException$(ex: $IllegalStateException$) =
-    org.springframework.http.ProblemDetail.forStatusAndDetail(org.springframework.http.HttpStatus.$BAD_REQUEST$, ex.message).also {
-        logger.warn(ex.stackTraceToString())
-    }

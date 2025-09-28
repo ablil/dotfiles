@@ -1,7 +1,0 @@
-target: other
-shortcut: permissions
-description: Github workflow permissions
----
-permissions:
-    contents: read
-    packages: write

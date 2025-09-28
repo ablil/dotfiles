@@ -1,7 +1,0 @@
-shortcut: feign
-description: Feign client method
-target: kotlin
----
-@feign.RequestLine("$GET$ /v1/tenants/{tenant}/$path$")
-@feign.Headers("Content-Type: application/json")
-fun $fn$(@feign.Param("tenant") tenant: String): net.payback.test.suits.rest.DetailedResponse<$response$>
