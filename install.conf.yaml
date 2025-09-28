@@ -38,7 +38,5 @@
 
     ~/.gradle/gradle.properties: gradle/gradle.properties
 
-    ~/.local/bin:
-      glob: true
-      path: .local/bin/*
+    ~/.local/bin/ai: .local/bin/ai.py
     ~/.config/spring-boot/spring-boot-devtools.yaml: ./spring-boot-devtools.yaml
