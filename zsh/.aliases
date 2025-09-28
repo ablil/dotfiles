@@ -15,7 +15,7 @@ alias rmr="rm -r"
 alias o=xdg-open
 alias yt=yt-dlp
 alias igrep='grep -i'
-alias esed'sed -E'
+alias esed='sed -E'
 alias clip="xclip -selection clipboard"
 alias gcp="gcloud"
 alias tf="terraform"
@@ -26,4 +26,6 @@ alias gstam="git stash push -m"
 # macos specific alises
 if [[ $(uname) == "Darwin" ]]; then
     alias sed=gsed
+    alias clip="pbcopy"
+    alias o="open"
 fi
