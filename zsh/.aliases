@@ -29,3 +29,6 @@ if [[ $(uname) == "Darwin" ]]; then
     alias clip="pbcopy"
     alias o="open"
 fi
+
+alias conf="gcloud config configurations activate"
+alias dls='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
