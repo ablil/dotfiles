@@ -1,0 +1,93 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+" Make sure you have KJump plugin installed
+" setting > keymap > kJump word 0  and set it to your preferred char
+set rnu
+set easymotion
+
+" highlight yank (bundle plugin)
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
+
+let mapleader = ","
+" jump around
+map T <Action>(RunClass)
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" remap goto actions
+map <leader>t <Action>(GotoTest)
+map <leader>n <Action>(GotoClass)
+map <leader>f <Action>(GotoFile)
+map <leader>a <Action>(GotoAction)
+map <leader>x <Action>(GotoSymbol)
+map <leader>e <Action>(RecentFiles)
+
+" misc
+map <leader>s <Action>(FileStructurePopup)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>o <Action>(ActivateTerminalToolWindow)
+
+" tabs navigation
+nmap <leader>1 <Action>(GoToTab1)
+nmap <leader>2 <Action>(GoToTab2)
+nmap <leader>3 <Action>(GoToTab3)
+nmap <leader>4 <Action>(GoToTab4)
+nmap <leader>5 <Action>(GoToTab5)
+nmap <leader>6 <Action>(GoToTab6)
+nmap <leader>7 <Action>(GoToTab7)
+nmap <leader>8 <Action>(GoToTab8)
+nmap <leader>9 <Action>(GoToTab9)
+
+" menus navigation
+nmap <leader>mm <Action>(MainMenu)
+nmap <leader>ma <Action>(AnalyzeMenu)
+nmap <leader>mb <Action>(BuildMenu)
+nmap <leader>mc <Action>(CodeMenu)
+nmap <leader>mf <Action>(FindMenuGroup)
+nmap <leader>mg <Action>(GoToMenu)
+nmap <leader>ms <Action>(ScopeViewPopupMenu)
+nmap <leader>mt <Action>(EditorTabPopupMenu)
+nmap <leader>mw <Action>(ToolWindowsGroup)
+
+" debug
+nmap <leader>dc <Action>(ContextDebug)
+nmap <leader>dx <Action>(Debug)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>de <Action>(EditBreakpoint)
+nmap <leader>dv <Action>(ViewBreakpoints)
+
+" hierarchy
+nmap <leader>hc <Action>(CallHierarchy)
+nmap <leader>hm <Action>(MethodHierarchy)
+nmap <leader>ht <Action>(TypeHierarchy)
+
+" []
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+nmap [t <Action>(PreviousTab)
+nmap ]t <Action>(NextTab)
+
+
+" zen
+nmap <leader>z <Action>(ToggleZenMode)
+
+" enable some plugins
+set surround    " enable surround plugin
+set ideajoin    " smart join with j
+set nerdtree    " navigate file explorer with hjkl
+set which-key   " requires which-key idea plugin
+set ideamarks   " bind vim marks to IDE bookmarks
