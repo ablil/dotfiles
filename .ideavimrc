@@ -36,7 +36,6 @@ map <leader>e <Action>(RecentFiles)
 
 " misc
 map <leader>s <Action>(FileStructurePopup)
-map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(ActivateTerminalToolWindow)
 
 " tabs navigation
@@ -67,6 +66,7 @@ nmap <leader>dx <Action>(Debug)
 nmap <leader>db <Action>(ToggleLineBreakpoint)
 nmap <leader>de <Action>(EditBreakpoint)
 nmap <leader>dv <Action>(ViewBreakpoints)
+nmap <leader>ds <Action>(Stop)
 
 " hierarchy
 nmap <leader>hc <Action>(CallHierarchy)
@@ -81,8 +81,15 @@ nmap [e <Action>(GotoPreviousError)
 nmap [t <Action>(PreviousTab)
 nmap ]t <Action>(NextTab)
 
+" windows
+nmap <leader>wr <Action>(ActivateRunToolWindow)
+nmap <leader>wd <Action>(ActivateDebugToolWindow)
+nmap <leader>wb <Action>(ActivateBuildToolWindow)
+nmap <leader>wa <Action>(ActivateAIAssistantToolWindow)
+nmap <leader>wp <Action>(ActivateProjectToolWindow)
+nmap <leader>wt <Action>(ActivateTODOToolWindow)
 
-" zen
+"  en
 nmap <leader>z <Action>(ToggleZenMode)
 
 " enable some plugins
