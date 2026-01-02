@@ -1,0 +1,23 @@
+name: test summary
+description: Add test summary to Github workflow after converting it from xml to markdown
+
+inputs:
+  builds_directories:
+    required: false
+    default: build
+    description: >
+      the build directory (default build/), override this if you have a different directory structure
+      or if you want to generate reports for multiple builds
+
+runs:
+  using: composite
+  steps:
+    - name: run python script
+      shell: bash
+      run: |
+        if [[ -d ${{ inputs.builds_directories }} ]]; then
+          python ${{ github.action_path }}/run.py ${{ inputs.builds_directories }}
+          cat output.md >> $GITHUB_STEP_SUMMARY
+        else
+          echo "${{ inputs.builds_directories }} NOT found, skipping"
+        fi
