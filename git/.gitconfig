@@ -1,22 +1,17 @@
 [alias]
     ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
-    override = !git add -u && git commit --amend --no-edit && git push origin $(git branch --show-current) -f
-    edit = !git commit --amend
     empty = !git commit -m 'trigger build' --allow-empty
-    l = log --oneline
-    s = status
-    ss = status --short
     drop = reset --hard HEAD^
 [core]
 	editor = vim
-  excludesfile = ~/.gitignore
-  attributesfile = ~/.gitattributes
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
 	autocrlf = input
 [status]
 	branch = true
 [branch]
-  # show most recentely changed branches first
-  sort = -committerdate
+    # show most recentely changed branches first
+    sort = -committerdate
 [user]
 	email = ablil@proton.me
 	name = ablil
@@ -29,3 +24,12 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[fetch]
+    prune = true
+[pull]
+    rebase = true
