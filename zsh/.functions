@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-function mk() {
-  mkdir $1 && cd $1
-}
-
 # touch but for nested files
 function mkfile() {
   f_dirname=$(dirname $1)
@@ -11,10 +7,6 @@ function mkfile() {
       mkdir -p $f_dirname
   fi
   touch $1
-}
-
-function mkgit() {
-  mkdir $1 && cd $1 && git init && touch .gitignore && git config --local credential.helper store
 }
 
 
@@ -35,7 +27,7 @@ function f() {
 # cd - cd to directory, including hidden directories
 function cdf() {
   local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+  dir=$(fd --type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 # historyf - repeat history
