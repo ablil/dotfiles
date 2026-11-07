@@ -21,6 +21,5 @@ target/
 .env
 .exports_private
 .aider*
-.local/bin/.idea/
 CLAUDE.md
 AGENTS.md
