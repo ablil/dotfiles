@@ -1,35 +1,14 @@
-#!/bin/bash
-# append ticket number to commit message, extract it from the branch name SHOP-1234-branch-name
+#!/usr/bin/env bash
+set -euo pipefail
 
+hook_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$hook_dir/../policy.sh"
 
-branch_name=$(git rev-parse --abbrev-ref HEAD)
-ticket_pattern="^SHOP-[[:digit:]]{2,}"
+branch_name="$(git branch --show-current)"
+prefix="${GIT_TICKET_PREFIX:-$(git config --get ticket.prefix 2>/dev/null || printf 'SHOP')}"
+commit_message="$(cat "$1")"
+new_message="$(rewrite_commit_message "$branch_name" "$prefix" "$commit_message")"
 
-# Only proceed if branch name matches ticket pattern
-if [[ $branch_name =~ $ticket_pattern ]]; then
-  ticket_number=$(echo "$branch_name" | grep -oE 'SHOP-[0-9]{2,}')
-  commit_message=$(cat "$1")
-
-  # If ticket number already present, do nothing
-  if [[ $commit_message =~ $ticket_number ]]; then
-    exit 0
-  fi
-
-  # Check for conventional commit (feat, fix, chore, ci, refactor, test, style, perf, build, revert, docs)
-  if [[ $commit_message =~ ^(feat|fix|chore|ci|refactor|test|style|perf|build|revert|docs)(\([^)]+\))?: ]]; then
-    # Extract type and optional scope
-    type_and_scope=$(echo "$commit_message" | grep -oE '^(feat|fix|chore|ci|refactor|test|style|perf|build|revert|docs)(\([^)]+\))?')
-    rest=$(echo "$commit_message" | sed -E 's/^(feat|fix|chore|ci|refactor|test|style|perf|build|revert|docs)(\([^)]+\))?: //')
-    # If scope exists, replace it with ticket number; else, add scope
-    if [[ $type_and_scope =~ \(.*\) ]]; then
-      new_message=$(echo "$type_and_scope" | sed -E "s/\(.*\)/(\$ticket_number)/")
-    else
-      new_message="$type_and_scope($ticket_number)"
-    fi
-    echo "$new_message: $rest" > "$1"
-  else
-    # Not a conventional commit, prepend ticket number
-    echo "$ticket_number: $commit_message" > "$1"
-  fi
+if [[ "$new_message" != "$commit_message" ]]; then
+  printf '%s\n' "$new_message" > "$1"
 fi
-

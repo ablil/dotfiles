@@ -36,6 +36,7 @@
       path: Code/*
 
     ~/.gitconfig: git/.gitconfig
+    ~/.git-templates/policy.sh: git/policy.sh
     ~/.git-templates/hooks:
       glob: true
       path: git/hooks/*

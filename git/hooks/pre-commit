@@ -1,10 +1,23 @@
-#!/bin/bash
-# prevent commiting to main branch
+#!/usr/bin/env bash
+set -euo pipefail
 
-current_branch=$(git branch --show-current)
-if [[ $current_branch == 'main' || $current_branch == 'master' ]]; then
-    echo 'YOU ARE ON THE MAIN BRANCH, add --no-verify flag to ignore'
-    exit 1;
- fi
+hook_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$hook_dir/../policy.sh"
 
- exit 0
+current_branch="$(git branch --show-current)"
+protected="$(git config --get-all guard.protectedBranches 2>/dev/null | tr '\n' ' ' || true)"
+
+if branch_is_protected "$current_branch" "$protected"; then
+  echo 'YOU ARE ON A PROTECTED BRANCH, add --no-verify flag to ignore' >&2
+  exit 1
+fi
+
+todos="$(todo_comments_in_diff "$(git diff --cached --unified=0 --no-color --diff-filter=ACMR)")"
+if [[ -n "$todos" ]]; then
+  echo 'TODO comments are not allowed in commits:' >&2
+  printf '%s\n' "$todos" >&2
+  echo 'Remove them or add --no-verify to ignore' >&2
+  exit 1
+fi
+
+exit 0
