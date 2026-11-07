@@ -1,5 +1,8 @@
 set nocompatible " no need to make vim VI-compatible
 set encoding=utf-8
+
+" shared leader and IdeaVim keymap
+source ~/.vim/keymaps.vim
 set rnu nu
 set showcmd     " show my keystrokes at the bottom right
 set hidden      " allow me to open new buffer without writing to the previous  one
@@ -56,7 +59,6 @@ map t <Plug>(easymotion-bd-w)
 
 " Remaps for buffers
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>x :xa<CR>
 nnoremap <Leader>q :qa<CR>
 nnoremap <Leader>w :wa<CR>
 
@@ -80,49 +82,12 @@ map <C-l> <C-w>l
 
 " Intellij IDEA specific remaps
 if has('ide')
-    " jump around
-    map T <Action>(RunClass)
-    nmap [[ <Action>(MethodUp)
-    nmap ]] <Action>(MethodDown)
-    nmap ]e <Action>(GotoNextError)
-    nmap [e <Action>(GotoPreviousError)
-
-    " Refactoring
-    map <leader>rn <Action>(RenameElement)
-    map <leader>rm <Action>(ExtractMethod)
-    map <leader>rv <Action>(IntroduceVariable)
-    map <leader>rf <Action>(IntroduceField)
-    map <leader>rs <Action>(ChangeSignature)
-    map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-
-    " remap goto actions
-    map <leader>t <Action>(GotoTest)
-    map <leader>n <Action>(GotoClass)
-    map <leader>f <Action>(GotoFile)
-    map <leader>a <Action>(GotoAction)
-    map <leader>x <Action>(GotoSymbol)
-    map <leader>e <Action>(RecentFiles)
-
-    " misc
-    map <leader>s <Action>(FileStructurePopup)
-    map <leader>d <Action>(Debug)
-    map <leader>b <Action>(ToggleLineBreakpoint)
-    map <leader>o <Action>(ActivateTerminalToolWindow)
-
     " PLugins
     Plug 'machakann/vim-highlightedyank'
 
     "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 
     " Find more examples here: https://jb.gg/share-ideavimrc
-    set notimeout
-
-    " enable some plugins
-    set surround    " enable surround plugin
-    set ideajoin    " smart join with j
-    set nerdtree    " navigate file explorer with hjkl
-    set easymotion
-    set which-key   " requires which-key idea plugin
 else
     " run the current file, expect shebang on top
     nnoremap <Leader>x   :!./%

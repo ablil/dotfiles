@@ -16,10 +16,13 @@
   - ~/.config/spring-boot
   - ~/.gradle
   - ~/.git-templates/hooks
+  - ~/.vim
   - ~/Library/Application Support/Code/User # macos
 
 - link:
     ~/.vimrc: .vimrc
+    ~/.ideavimrc: .ideavimrc
+    ~/.vim/keymaps.vim: vim/keymaps.vim
     ~/.curlrc: .curlrc
     ~/.tmux.conf: .tmux.conf
 
