@@ -1,20 +1,15 @@
 spring:
+  docker:
+    lifecycle-management: start_only
   devtools:
     livereload:
       enabled: false
   main:
     banner-mode: off
-    lazy-initiaization: true # useful when restarting with spring-boot-devtools
+    lazy-initialization: true
   output:
     ansi:
       enabled: always
-  jpa:
-    show_sql: true
-    hibernate:
-      ddl-auto: update
-  datasource:
-    hikari:
-      maximum-pool-size: 5 # keep it light
   jackson:
     serialization:
       indent_output: true # pretty-print JSON
@@ -25,13 +20,12 @@ server:
 
 
 logging:
-  level:
-    com.github.ablil: debug
-    net.payback: debug
-    com.example: debug
-    org.springframework.web: debug
-    org.springframework.security: debug
   include-application-name: false
   pattern:
     dateformat: 'HH:mm:ss.SSS'
-    console: '%clr(%d{HH:mm:ss.SSS}) %clr(%5p) %clr(%-40.40logger{39}){cyan} %m%n'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
