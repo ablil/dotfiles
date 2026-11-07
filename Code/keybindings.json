@@ -38,5 +38,15 @@
     "key": "ctrl+shift+`",
     "command": "-workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": ";",
+    "command": "code-jump.startJump",
+    "when": "editorTextFocus && !code-jump.inJumpMode"
+  },
+  {
+    "key": "cmd+;",
+    "command": "-code-jump.startJump",
+    "when": "editorTextFocus && !code-jump.inJumpMode"
   }
 ]
