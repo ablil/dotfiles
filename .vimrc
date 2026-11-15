@@ -126,33 +126,3 @@ augroup dotfiles_trim_empty
     autocmd!
     autocmd BufWritePre * call TrimEmptyLines()
 augroup END
-
-" Terraform format on save, buffer is left untouched when fmt fails
-fun! TerraformFmt() abort
-    if !s:RealBuffer()
-        return
-    endif
-    if !executable('terraform')
-        call s:Warn('terraform not found')
-        return
-    endif
-    let l:current = getline(1, '$')
-    let l:formatted = system('terraform fmt -', join(l:current, "\n"))
-    if v:shell_error
-        call s:Warn('terraform fmt failed, buffer left unchanged')
-        return
-    endif
-    let l:lines = split(l:formatted, "\n")
-    if empty(l:lines) || l:lines ==# l:current
-        return
-    endif
-    let l:save_cursor = getpos('.')
-    silent %delete _
-    call setline(1, l:lines)
-    call setpos('.', l:save_cursor)
-endfun
-
-augroup dotfiles_terraform_fmt
-    autocmd!
-    autocmd BufWritePre *.tf call TerraformFmt()
-augroup END
