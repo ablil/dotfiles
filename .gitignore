@@ -22,6 +22,5 @@ target/
 .exports_private
 .aider*
 CLAUDE.md
-AGENTS.md
 docs
 .scratch
