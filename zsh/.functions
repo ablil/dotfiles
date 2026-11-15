@@ -75,3 +75,15 @@ function wipe() {
 function repo() {
     cd $HOME/repos/$(fzf < <(ls $HOME/repos))
 }
+
+function curlj() {
+    curl -sS -H 'Accept: application/json' "$@" | jq
+}
+
+function curlh() {
+    curl -sS -o /dev/null -D - "$@"
+}
+
+function curlcode() {
+    curl -sS -o /dev/null -w '%{http_code}\n' "$@"
+}
