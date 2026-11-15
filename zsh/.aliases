@@ -10,25 +10,23 @@ alias dc="docker compose"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias gclnf="git clean -fd"
-alias gclnb="git branch -l | grep -vE 'master|main|dev|develop' | xargs git branch -D"
 alias rmr="rm -r"
-alias o=xdg-open
 alias yt=yt-dlp
 alias igrep='grep -i'
 alias esed='sed -E'
-alias clip="xclip -selection clipboard"
 alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
-alias mkdir="mkdir -p"
 alias gstam="git stash push -m"
-
-# macos specific alises
-if [[ $(uname) == "Darwin" ]]; then
-    alias sed=gsed
-    alias clip="pbcopy"
-    alias o="open"
-fi
-
 alias conf="gcloud config configurations activate"
 alias dls='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+
+# macos specific aliases
+if [[ $OSTYPE == darwin* ]]; then
+    (( $+commands[gsed] )) && alias sed=gsed
+    alias clip="pbcopy"
+    alias o="open"
+else
+    (( $+commands[xclip] )) && alias clip="xclip -selection clipboard"
+    alias o="xdg-open"
+fi
