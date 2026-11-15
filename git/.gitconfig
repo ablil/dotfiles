@@ -2,6 +2,7 @@
     ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
     empty = !git commit -m 'trigger build' --allow-empty
     drop = reset --hard HEAD^
+    edit = commit --amend
 [core]
 	editor = vim
     excludesfile = ~/.gitignore
