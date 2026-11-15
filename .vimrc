@@ -78,8 +78,12 @@ nnoremap <Leader>w :wa<CR>
 nnoremap <silent> <Leader><CR> :nohlsearch<CR>
 
 " Bottom status line
+fun! BufCount() abort
+    return len(getbufinfo({'buflisted': 1}))
+endfun
+
 set laststatus=2
-set statusline=file:\ %f%h\ %w\ \ cwd:\ %{getcwd()}\ \ buff:\ %n/%{len(getbufinfo({'buflisted':1}))}
+set statusline=file:\ %f%h\ %w\ \ cwd:\ %{getcwd()}\ \ buff:\ %n/%{BufCount()}
 set statusline +=%=%c:%l/%L\ %m%r%y
 
 fun! RunCurrentFile() abort
