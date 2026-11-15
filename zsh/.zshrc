@@ -6,7 +6,7 @@ bindkey -v # enable vi keybinding in zsh terminal
 ZSH_THEME="less-noise"
 export ZSH="$HOME/.oh-my-zsh"
 zstyle ':omz:update' frequency 13 # auto update zsh every 13 days
-plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages terraform zsh-vi-mode)
+plugins=(git gitignore docker one-character zsh-autosuggestions zsh-syntax-highlighting colored-man-pages terraform zsh-vi-mode direnv)
 
 source $ZSH/oh-my-zsh.sh
 
