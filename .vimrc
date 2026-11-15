@@ -1,36 +1,61 @@
-set nocompatible " no need to make vim VI-compatible
+set nocompatible
 set encoding=utf-8
 
 " shared leader and IdeaVim keymap
 source ~/.vim/keymaps.vim
+
+" editing
 set rnu nu
-set showcmd     " show my keystrokes at the bottom right
-set hidden      " allow me to open new buffer without writing to the previous  one
-set mouse=a     " allow mouse scrolling
+set showcmd
+set hidden
+set mouse=a
+set backspace=indent,eol,start
+set scrolloff=7
+set signcolumn=yes
+set updatetime=300
+set ttimeoutlen=10
+set nrformats-=octal
+set path+=**
+set termguicolors
+if has('mac') || has('macunix')
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
+
+" keep swap/undo/backup files out of the working tree
+for s:dir in [$HOME.'/.vim/swap', $HOME.'/.vim/backup', $HOME.'/.vim/undo-history']
+    if !isdirectory(s:dir)
+        call mkdir(s:dir, 'p')
+    endif
+endfor
+set undofile
+set undodir=~/.vim/undo-history//
+set directory=~/.vim/swap//
+set backupdir=~/.vim/backup//
 
 " Indention
-set expandtab	" use spaces instead of tab
-set smartindent " automatically indent next line accordingly
+set expandtab
+set smartindent
 set autoindent
 set shiftwidth=4
+set softtabstop=4
 set tabstop=4
-
+set shiftround
 
 " searching
-set incsearch   " highlight next search match
-set hlsearch    " hightlight all search matches
-
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
 " theming
 colorscheme sorbet
-set cursorline " hightlight current line
+set cursorline
 set colorcolumn=100
 
-
-" Enable syntax highlighting
-filetype plugin on
+filetype plugin indent on
 syntax on
-
 
 " STOP USING THE FUCKING ARROW KEYS
 noremap <Up> <Nop>
@@ -43,36 +68,31 @@ let &t_SI = "\e[5 q"
 let &t_SR = "\e[3 q"
 let &t_EI = "\e[2 q"
 
-
-" PLUGINS
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-"Plugin 'easymotion/vim-easymotion'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'airblade/vim-gitgutter'
-call vundle#end()
-
-map t <Plug>(easymotion-bd-w)
-
-" Remaps for buffers
+" plugins live in ~/.vim/pack/plugins/start (native packages, no manager)
+nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>g :Rg<CR>
+nnoremap <Leader>l :BLines<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>q :qa<CR>
 nnoremap <Leader>w :wa<CR>
-
+nnoremap <silent> <Leader><CR> :nohlsearch<CR>
 
 " Bottom status line
-function! BufferCount()
-    return bufnr('$')
-endfunction
-
 set laststatus=2
-set statusline=file:\ %f%h\ %w\ \ cwd:\ %r%{getcwd()}%h\ \ buff:\ %n/%{BufferCount()}
+set statusline=file:\ %f%h\ %w\ \ cwd:\ %{getcwd()}\ \ buff:\ %n/%{len(getbufinfo({'buflisted':1}))}
 set statusline +=%=%c:%l/%L\ %m%r%y
 
-set so=7    " set 7 lines from the cursor while moving vertically
+fun! RunCurrentFile() abort
+    let l:file = expand('%:p')
+    if empty(l:file)
+        call s:Warn('buffer has no file to run')
+        return
+    endif
+    execute '!' . shellescape(l:file, 1)
+endfun
+
+" run the current file, expect shebang on top
+nnoremap <Leader>x :call RunCurrentFile()<CR>
 
 " smart way of moving between windows
 map <C-j> <C-w>j
@@ -80,38 +100,55 @@ map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
 
-" Intellij IDEA specific remaps
-if has('ide')
-    " PLugins
-    Plug 'machakann/vim-highlightedyank'
+fun! s:RealBuffer() abort
+    return &buftype ==# '' && &modifiable
+endfun
 
-    "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-
-    " Find more examples here: https://jb.gg/share-ideavimrc
-else
-    " run the current file, expect shebang on top
-    nnoremap <Leader>x   :!./%
-endif
+fun! s:Warn(msg) abort
+    echohl WarningMsg | echomsg a:msg | echohl None
+endfun
 
 " Remove trailing empty lines on save
-fun! TrimEmptyLines()
-    let save_cursor = getpos('.')               " Save cursor position
-    silent! %s#\($\n\s*\)\+\%$##               " Remove trailing empty lines
-    call setpos('.', save_cursor)               " Restore cursor position
-endfun
-autocmd BufWritePre * call TrimEmptyLines() " Apply to all files
-
-
-" Terraform format on save (only if 'terraform' is installed)
-fun! TerraformFmt()
-  " Check if 'terraform' is executable
-  if executable('terraform')
-    " Save cursor position and run 'terraform fmt'
+fun! TrimEmptyLines() abort
+    if !s:RealBuffer()
+        return
+    endif
     let l:save_cursor = getpos('.')
-    silent execute '%!terraform fmt -'
+    silent! %s#\($\n\s*\)\+\%$##
     call setpos('.', l:save_cursor)
-  else
-    echo "Terraform not found! Install it first: https://www.terraform.io/downloads"
-  endif
 endfun
-autocmd BufWritePre *.tf call TerraformFmt()
+
+augroup dotfiles_trim_empty
+    autocmd!
+    autocmd BufWritePre * call TrimEmptyLines()
+augroup END
+
+" Terraform format on save, buffer is left untouched when fmt fails
+fun! TerraformFmt() abort
+    if !s:RealBuffer()
+        return
+    endif
+    if !executable('terraform')
+        call s:Warn('terraform not found')
+        return
+    endif
+    let l:current = getline(1, '$')
+    let l:formatted = system('terraform fmt -', join(l:current, "\n"))
+    if v:shell_error
+        call s:Warn('terraform fmt failed, buffer left unchanged')
+        return
+    endif
+    let l:lines = split(l:formatted, "\n")
+    if empty(l:lines) || l:lines ==# l:current
+        return
+    endif
+    let l:save_cursor = getpos('.')
+    silent %delete _
+    call setline(1, l:lines)
+    call setpos('.', l:save_cursor)
+endfun
+
+augroup dotfiles_terraform_fmt
+    autocmd!
+    autocmd BufWritePre *.tf call TerraformFmt()
+augroup END
