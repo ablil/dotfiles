@@ -17,6 +17,7 @@ alias esed='sed -E'
 alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
+alias classpath="./gradlew -q printClasspath"
 alias gstam="git stash push -m"
 alias conf="gcloud config configurations activate"
 alias dls='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'

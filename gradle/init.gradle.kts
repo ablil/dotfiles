@@ -47,3 +47,20 @@ if (GradleVersion.current() >= GradleVersion.version("9.0")) {
         }
     }
 }
+
+allprojects {
+    plugins.withId("java") {
+        tasks.register("printClasspath") {
+            group = "help"
+            description = "Prints the main runtime classpath, one entry per line."
+
+            // Declared as an input and read from a provider so the configuration cache
+            // stores the resolved files instead of resolving them during execution.
+            val runtimeClasspath = configurations.named("runtimeClasspath")
+            inputs.files(runtimeClasspath)
+            val classpathEntries = runtimeClasspath.map { it.files.map(File::getAbsolutePath) }
+
+            doLast { classpathEntries.get().forEach(::println) }
+        }
+    }
+}
