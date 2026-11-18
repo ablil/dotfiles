@@ -54,3 +54,5 @@
 
     ~/.config/opencode/AGENTS.md: .agents/AGENTS.md
     ~/.claude/CLAUDE.md: .agents/AGENTS.md
+
+    ~/.agents/skills/spring-boot-project-scaffold: .agents/skills/spring-boot-project-scaffold
