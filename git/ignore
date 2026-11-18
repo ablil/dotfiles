@@ -12,3 +12,4 @@ TODO.md
 .DS_Store
 .idea
 .envrc
+.env

@@ -69,3 +69,22 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[blame]
+    date = relative
+[color "branch"]
+    current = yellow bold
+    remote = cyan
+    upstream = magenta
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[grep]
+	lineNumber = true
+	extendedRegexp = true

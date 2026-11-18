@@ -20,6 +20,7 @@ alias gdl="./gradlew"
 alias gstam="git stash push -m"
 alias conf="gcloud config configurations activate"
 alias dls='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
+alias glg="git lg" # override zsh alias
 
 # macos specific aliases
 if [[ $OSTYPE == darwin* ]]; then
