@@ -1,31 +1,55 @@
 spring:
   docker:
-    lifecycle-management: start_only
+    compose:
+      lifecycle-management: start-only
   devtools:
     livereload:
       enabled: false
-  main:
-    banner-mode: off
-    lazy-initialization: true
-  output:
-    ansi:
-      enabled: always
+    restart:
+      log-condition-evaluation-delta: false
   jackson:
     serialization:
       indent_output: true # pretty-print JSON
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+  main:
+    banner-mode: off
+    lazy-initialization: true
+  mvc:
+    log-request-details: true
+  output:
+    ansi:
+      enabled: always
+  thymeleaf:
+    cache: false
 
 server:
   error:
     include-message: always
-
+    include-binding-errors: always
+    include-exception: true
 
 logging:
   include-application-name: false
   pattern:
     dateformat: 'HH:mm:ss.SSS'
+  level:
+    web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+    env:
+      show-values: always
+    configprops:
+      show-values: always
