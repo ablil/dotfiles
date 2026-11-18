@@ -1,36 +1,71 @@
 [alias]
-    ignored = !git ls-files -v | grep "^[[:lower:]]" # list ignored files with git update-index --assume-unchanged
-    empty = !git commit -m 'trigger build' --allow-empty
-    drop = reset --hard HEAD^
-    edit = commit --amend
+	ignored   = ls-files --others --ignored --exclude-standard
+	unchanged = !git ls-files -v | grep "^[[:lower:]]" | cut -c3-
+	empty     = commit -m 'trigger build' --allow-empty
+	drop      = reset --hard HEAD^
+	undo      = reset --soft HEAD^
+	edit      = commit --amend
+	st        = status -sb
+	co        = checkout
+	sw        = switch
+	br        = branch -vv
+	last      = log -1 HEAD --stat
+	unstage   = restore --staged
+	lg        = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
 [core]
 	editor = vim
-    excludesfile = ~/.gitignore
-    attributesfile = ~/.gitattributes
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 	autocrlf = input
 [status]
 	branch = true
 [branch]
-    # show most recentely changed branches first
-    sort = -committerdate
+	sort = -committerdate
 [user]
-	email = ablil@proton.me
 	name = ablil
+	email = ablil@proton.me
+	signingkey = ~/.ssh/id_git_repositories.pub
 [init]
 	defaultBranch = main
 	templateDir = ~/.git-templates
+[commit]
+	gpgsign = true
+	verbose = true
+[tag]
+	sort = version:refname
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [merge]
 	tool = vimdiff
+	conflictStyle = zdiff3
+[mergetool]
+	keepBackup = false
 [diff]
 	tool = vimdiff
+	algorithm = histogram
 [difftool]
 	prompt = false
+[column]
+	ui = auto
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[rebase]
+	autoStash = true
+	autoSquash = true
+[rerere]
+	enabled = true
+[help]
+	autocorrect = 10
+[log]
+	date = relative
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[fetch]
-    prune = true
-[pull]
-    rebase = true

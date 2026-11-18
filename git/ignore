@@ -1,0 +1,14 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+.wip
+GEMINI.md
+CLAUDE.md
+TODO.md
+.todo
+.gemini
+.claude
+.DS_Store
+.idea
+.envrc

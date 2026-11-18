@@ -1,0 +1,7 @@
+*.lock      -diff
+*.min.js    -diff
+*.min.css   -diff
+*.snap      -diff
+*.pbxproj   -diff
+*.tfstate   -diff
+*.tfstate.* -diff

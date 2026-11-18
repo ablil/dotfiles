@@ -39,6 +39,9 @@
       path: Code/*
 
     ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/ignore
+    ~/.gitattributes: git/attributes
+    ~/.ssh/allowed_signers: git/allowed_signers
     ~/.git-templates/policy.sh: git/policy.sh
     ~/.git-templates/hooks:
       glob: true
