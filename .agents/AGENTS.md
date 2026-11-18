@@ -1,5 +1,6 @@
 # Guidlines
 
+* for frontend always use Nextjs with shadcn UI 
 * use yarn, never npm
 * use gradle wrapper, never gradle directly
 * use gradle, never maven
