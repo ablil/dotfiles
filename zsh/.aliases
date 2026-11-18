@@ -17,7 +17,6 @@ alias esed='sed -E'
 alias gcp="gcloud"
 alias tf="terraform"
 alias gdl="./gradlew"
-alias classpath="./gradlew -q printClasspath"
 alias gstam="git stash push -m"
 alias conf="gcloud config configurations activate"
 alias dls='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Ports}}\t{{.Status}}"'
@@ -31,3 +30,17 @@ else
     (( $+commands[xclip] )) && alias clip="xclip -selection clipboard"
     alias o="xdg-open"
 fi
+
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# print classpath of the current project
+alias classpath="./gradlew -q printClasspath" # taks registred with gradle init script
+
+# print java home from system properties
+alias javahome="java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'"
