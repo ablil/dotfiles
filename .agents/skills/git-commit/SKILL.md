@@ -1,6 +1,6 @@
 ---
 name: Git Commit
-description: Analyse staged changes and generate a conventional commit message with Added/Updated/Removed bullets. Use when asked to write a commit message for staged changes.
+description: Use whenever creating a git commit message, including when another skills says to commit
 ---
 
 # Git Commit
