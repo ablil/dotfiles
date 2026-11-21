@@ -57,4 +57,5 @@
     ~/.config/opencode/themes: .agents/opencode/themes
     ~/.claude/CLAUDE.md: .agents/AGENTS.md
 
+    ~/.agents/skills/git-commit: .agents/skills/git-commit
     ~/.agents/skills/spring-boot-project-scaffold: .agents/skills/spring-boot-project-scaffold
