@@ -56,6 +56,7 @@
     ~/.config/opencode/cli.json: .agents/opencode/cli.json
     ~/.config/opencode/themes: .agents/opencode/themes
     ~/.claude/CLAUDE.md: .agents/AGENTS.md
+    ~/.claude/themes: .agents/claude/themes
 
     ~/.config/opencode/skills:
       glob: true
