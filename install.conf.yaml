@@ -53,6 +53,8 @@
     ~/.config/spring-boot/spring-boot-devtools.yaml: ./spring-boot-devtools.yaml
 
     ~/.config/opencode/AGENTS.md: .agents/AGENTS.md
+    ~/.config/opencode/cli.json: .agents/opencode/cli.json
+    ~/.config/opencode/themes: .agents/opencode/themes
     ~/.claude/CLAUDE.md: .agents/AGENTS.md
 
     ~/.agents/skills/spring-boot-project-scaffold: .agents/skills/spring-boot-project-scaffold
