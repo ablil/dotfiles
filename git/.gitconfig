@@ -24,7 +24,7 @@
 [user]
 	name = ablil
 	email = ablil@proton.me
-	signingkey = ~/.ssh/id_git_repositories.pub
+	signingkey = ~/.ssh/id_git.pub
 [init]
 	defaultBranch = main
 	templateDir = ~/.git-templates
@@ -35,8 +35,6 @@
 	sort = version:refname
 [gpg]
 	format = ssh
-[gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
 [merge]
 	tool = vimdiff
 	conflictStyle = zdiff3
